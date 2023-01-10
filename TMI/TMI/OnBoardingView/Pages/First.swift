@@ -11,7 +11,25 @@ struct First: View {
     
     
     var body: some View {
-        Text("내 손안의 작은 터미널")
+        VStack(alignment: .leading) {
+            Group {
+                Text("내 손안의")
+                    .font(.largeTitle)
+                    .bold()
+                Spacer().frame(height: 15)
+                Text("작은 터미널")
+                    .font(.largeTitle)
+                    .bold()
+                Spacer().frame(height: 150)
+                ZStack {
+                        Image("terminal")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .offset(x: -15, y: -50)
+                }
+            }
+        }
+        .padding(.horizontal, 25)
     }
 }
 
