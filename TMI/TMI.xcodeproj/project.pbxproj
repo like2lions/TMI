@@ -11,20 +11,22 @@
 		16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36C96296D5E5B00C1BB68 /* ContentView.swift */; };
 		16E36C99296D5E5E00C1BB68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E36C98296D5E5E00C1BB68 /* Assets.xcassets */; };
 		16E36C9D296D5E5E00C1BB68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E36C9C296D5E5E00C1BB68 /* Preview Assets.xcassets */; };
-		F4CF5842296D83620025A043 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5841296D83620025A043 /* First.swift */; };
-		F4CF5844296D8FD40025A043 /* Second.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5843296D8FD40025A043 /* Second.swift */; };
-		F4CF5846296D8FDB0025A043 /* Third.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5845296D8FDB0025A043 /* Third.swift */; };
-		F4CF584A296D903C0025A043 /* Last.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5849296D903C0025A043 /* Last.swift */; };
-		F4CF584C296D90910025A043 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF584B296D90910025A043 /* OnBoardingView.swift */; };
-		F4CF584F296D92040025A043 /* OnBoardingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF584E296D92040025A043 /* OnBoardingTab.swift */; };
-		F4CF5854296D9A7E0025A043 /* LottieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5853296D9A7E0025A043 /* LottieManager.swift */; };
-		F4CF5857296D9AF60025A043 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F4CF5856296D9AF60025A043 /* Lottie */; };
-		F4CF5859296DA3250025A043 /* second_rottie.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CF5858296DA3250025A043 /* second_rottie.json */; };
-		F4CF585B296DA4FC0025A043 /* third_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CF585A296DA4FC0025A043 /* third_lottie.json */; };
-		F4CF585D296DA6460025A043 /* last_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CF585C296DA6460025A043 /* last_lottie.json */; };
+		16E36CB4296DABCF00C1BB68 /* Fourth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CA6296DABCF00C1BB68 /* Fourth.swift */; };
+		16E36CB5296DABCF00C1BB68 /* Second.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CA8296DABCF00C1BB68 /* Second.swift */; };
+		16E36CB6296DABCF00C1BB68 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CA9296DABCF00C1BB68 /* First.swift */; };
+		16E36CB7296DABCF00C1BB68 /* Third.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CAA296DABCF00C1BB68 /* Third.swift */; };
+		16E36CB8296DABCF00C1BB68 /* Last.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CAB296DABCF00C1BB68 /* Last.swift */; };
+		16E36CB9296DABCF00C1BB68 /* first.json in Resources */ = {isa = PBXBuildFile; fileRef = 16E36CAD296DABCF00C1BB68 /* first.json */; };
+		16E36CBA296DABCF00C1BB68 /* last_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 16E36CAE296DABCF00C1BB68 /* last_lottie.json */; };
+		16E36CBB296DABCF00C1BB68 /* second_rottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 16E36CAF296DABCF00C1BB68 /* second_rottie.json */; };
+		16E36CBC296DABCF00C1BB68 /* third_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 16E36CB0296DABCF00C1BB68 /* third_lottie.json */; };
+		16E36CBD296DABCF00C1BB68 /* LottieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CB1296DABCF00C1BB68 /* LottieManager.swift */; };
+		16E36CBE296DABCF00C1BB68 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CB2296DABCF00C1BB68 /* OnBoardingView.swift */; };
+		16E36CBF296DABCF00C1BB68 /* OnBoardingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CB3296DABCF00C1BB68 /* OnBoardingTab.swift */; };
+		16E36CC2296DACCA00C1BB68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 16E36CC1296DACCA00C1BB68 /* Lottie */; };
+		63D1135E296D8B37002D922D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D1135D296D8B37002D922D /* DetailView.swift */; };
 		ADBA21CA296D6D5C00BAA26E /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA21C9296D6D5C00BAA26E /* Memo.swift */; };
 		ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA21CC296D70D400BAA26E /* HomeView.swift */; };
-		63D1135E296D8B37002D922D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D1135D296D8B37002D922D /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,19 +36,21 @@
 		16E36C98296D5E5E00C1BB68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16E36C9A296D5E5E00C1BB68 /* TMI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TMI.entitlements; sourceTree = "<group>"; };
 		16E36C9C296D5E5E00C1BB68 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F4CF5841296D83620025A043 /* First.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First.swift; sourceTree = "<group>"; };
-		F4CF5843296D8FD40025A043 /* Second.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second.swift; sourceTree = "<group>"; };
-		F4CF5845296D8FDB0025A043 /* Third.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Third.swift; sourceTree = "<group>"; };
-		F4CF5849296D903C0025A043 /* Last.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Last.swift; sourceTree = "<group>"; };
-		F4CF584B296D90910025A043 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
-		F4CF584E296D92040025A043 /* OnBoardingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingTab.swift; sourceTree = "<group>"; };
-		F4CF5853296D9A7E0025A043 /* LottieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieManager.swift; sourceTree = "<group>"; };
-		F4CF5858296DA3250025A043 /* second_rottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = second_rottie.json; sourceTree = "<group>"; };
-		F4CF585A296DA4FC0025A043 /* third_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = third_lottie.json; sourceTree = "<group>"; };
-		F4CF585C296DA6460025A043 /* last_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = last_lottie.json; sourceTree = "<group>"; };
+		16E36CA6296DABCF00C1BB68 /* Fourth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fourth.swift; sourceTree = "<group>"; };
+		16E36CA8296DABCF00C1BB68 /* Second.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Second.swift; sourceTree = "<group>"; };
+		16E36CA9296DABCF00C1BB68 /* First.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = First.swift; sourceTree = "<group>"; };
+		16E36CAA296DABCF00C1BB68 /* Third.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Third.swift; sourceTree = "<group>"; };
+		16E36CAB296DABCF00C1BB68 /* Last.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Last.swift; sourceTree = "<group>"; };
+		16E36CAD296DABCF00C1BB68 /* first.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = first.json; sourceTree = "<group>"; };
+		16E36CAE296DABCF00C1BB68 /* last_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = last_lottie.json; sourceTree = "<group>"; };
+		16E36CAF296DABCF00C1BB68 /* second_rottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = second_rottie.json; sourceTree = "<group>"; };
+		16E36CB0296DABCF00C1BB68 /* third_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = third_lottie.json; sourceTree = "<group>"; };
+		16E36CB1296DABCF00C1BB68 /* LottieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieManager.swift; sourceTree = "<group>"; };
+		16E36CB2296DABCF00C1BB68 /* OnBoardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		16E36CB3296DABCF00C1BB68 /* OnBoardingTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingTab.swift; sourceTree = "<group>"; };
+		63D1135D296D8B37002D922D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		ADBA21C9296D6D5C00BAA26E /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		ADBA21CC296D70D400BAA26E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		63D1135D296D8B37002D922D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4CF5857296D9AF60025A043 /* Lottie in Frameworks */,
+				16E36CC2296DACCA00C1BB68 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,8 +84,8 @@
 		16E36C93296D5E5B00C1BB68 /* TMI */ = {
 			isa = PBXGroup;
 			children = (
-				F4CF5840296D834D0025A043 /* OnBoardingView */,
 				16E36C94296D5E5B00C1BB68 /* TMIApp.swift */,
+				16E36CA5296DABCF00C1BB68 /* OnBoardingView */,
 				ADBA21CB296D6D6100BAA26E /* Model */,
 				16E36C96296D5E5B00C1BB68 /* ContentView.swift */,
 				63D1135D296D8B37002D922D /* DetailView.swift */,
@@ -100,37 +104,41 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		F4CF5840296D834D0025A043 /* OnBoardingView */ = {
+		16E36CA5296DABCF00C1BB68 /* OnBoardingView */ = {
 			isa = PBXGroup;
 			children = (
-				F4CF584B296D90910025A043 /* OnBoardingView.swift */,
-				F4CF584E296D92040025A043 /* OnBoardingTab.swift */,
-				F4CF584D296D90CE0025A043 /* Pages */,
+				16E36CA6296DABCF00C1BB68 /* Fourth.swift */,
+				16E36CA7296DABCF00C1BB68 /* Pages */,
+				16E36CB2296DABCF00C1BB68 /* OnBoardingView.swift */,
+				16E36CB3296DABCF00C1BB68 /* OnBoardingTab.swift */,
 			);
 			path = OnBoardingView;
 			sourceTree = "<group>";
 		};
-		F4CF584D296D90CE0025A043 /* Pages */ = {
+		16E36CA7296DABCF00C1BB68 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				F4CF5841296D83620025A043 /* First.swift */,
-				F4CF5843296D8FD40025A043 /* Second.swift */,
-				F4CF5845296D8FDB0025A043 /* Third.swift */,
-				F4CF5849296D903C0025A043 /* Last.swift */,
-				F4CF5850296D9A090025A043 /* Lottie */,
+				16E36CA8296DABCF00C1BB68 /* Second.swift */,
+				16E36CA9296DABCF00C1BB68 /* First.swift */,
+				16E36CAA296DABCF00C1BB68 /* Third.swift */,
+				16E36CAB296DABCF00C1BB68 /* Last.swift */,
+				16E36CAC296DABCF00C1BB68 /* Lottie */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
 		};
-		F4CF5850296D9A090025A043 /* Lottie */ = {
+		16E36CAC296DABCF00C1BB68 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				F4CF585C296DA6460025A043 /* last_lottie.json */,
-				F4CF585A296DA4FC0025A043 /* third_lottie.json */,
-				F4CF5858296DA3250025A043 /* second_rottie.json */,
-				F4CF5853296D9A7E0025A043 /* LottieManager.swift */,
+				16E36CAD296DABCF00C1BB68 /* first.json */,
+				16E36CAE296DABCF00C1BB68 /* last_lottie.json */,
+				16E36CAF296DABCF00C1BB68 /* second_rottie.json */,
+				16E36CB0296DABCF00C1BB68 /* third_lottie.json */,
+				16E36CB1296DABCF00C1BB68 /* LottieManager.swift */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
 		ADBA21CB296D6D6100BAA26E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +165,7 @@
 			);
 			name = TMI;
 			packageProductDependencies = (
-				F4CF5856296D9AF60025A043 /* Lottie */,
+				16E36CC1296DACCA00C1BB68 /* Lottie */,
 			);
 			productName = TMI;
 			productReference = 16E36C91296D5E5B00C1BB68 /* TMI.app */;
@@ -188,7 +196,7 @@
 			);
 			mainGroup = 16E36C88296D5E5B00C1BB68;
 			packageReferences = (
-				F4CF5855296D9AF60025A043 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				16E36CC0296DACCA00C1BB68 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 16E36C92296D5E5B00C1BB68 /* Products */;
 			projectDirPath = "";
@@ -204,9 +212,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4CF585B296DA4FC0025A043 /* third_lottie.json in Resources */,
-				F4CF585D296DA6460025A043 /* last_lottie.json in Resources */,
-				F4CF5859296DA3250025A043 /* second_rottie.json in Resources */,
+				16E36CBC296DABCF00C1BB68 /* third_lottie.json in Resources */,
+				16E36CBB296DABCF00C1BB68 /* second_rottie.json in Resources */,
+				16E36CBA296DABCF00C1BB68 /* last_lottie.json in Resources */,
+				16E36CB9296DABCF00C1BB68 /* first.json in Resources */,
 				16E36C9D296D5E5E00C1BB68 /* Preview Assets.xcassets in Resources */,
 				16E36C99296D5E5E00C1BB68 /* Assets.xcassets in Resources */,
 			);
@@ -219,19 +228,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4CF584F296D92040025A043 /* OnBoardingTab.swift in Sources */,
-				F4CF5846296D8FDB0025A043 /* Third.swift in Sources */,
-				F4CF584A296D903C0025A043 /* Last.swift in Sources */,
-				F4CF584C296D90910025A043 /* OnBoardingView.swift in Sources */,
-				16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */,
-				F4CF5842296D83620025A043 /* First.swift in Sources */,
 				ADBA21CA296D6D5C00BAA26E /* Memo.swift in Sources */,
+				16E36CB4296DABCF00C1BB68 /* Fourth.swift in Sources */,
 				ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */,
+				16E36CBF296DABCF00C1BB68 /* OnBoardingTab.swift in Sources */,
 				16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */,
+				16E36CB7296DABCF00C1BB68 /* Third.swift in Sources */,
+				16E36CBD296DABCF00C1BB68 /* LottieManager.swift in Sources */,
 				63D1135E296D8B37002D922D /* DetailView.swift in Sources */,
+				16E36CB5296DABCF00C1BB68 /* Second.swift in Sources */,
+				16E36CB6296DABCF00C1BB68 /* First.swift in Sources */,
+				16E36CBE296DABCF00C1BB68 /* OnBoardingView.swift in Sources */,
 				16E36C95296D5E5B00C1BB68 /* TMIApp.swift in Sources */,
-				F4CF5844296D8FD40025A043 /* Second.swift in Sources */,
-				F4CF5854296D9A7E0025A043 /* LottieManager.swift in Sources */,
+				16E36CB8296DABCF00C1BB68 /* Last.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,20 +452,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F4CF5855296D9AF60025A043 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		16E36CC0296DACCA00C1BB68 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F4CF5856296D9AF60025A043 /* Lottie */ = {
+		16E36CC1296DACCA00C1BB68 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F4CF5855296D9AF60025A043 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = 16E36CC0296DACCA00C1BB68 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
