@@ -14,9 +14,7 @@ struct HomeView: View {
             terminalBar(user: "Chap", path: "~/Desktop")
             Spacer()
         }
-        .onAppear {
-            
-        }
+        .padding(.top, 1)
     }
 }
 
