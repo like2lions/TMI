@@ -22,6 +22,9 @@
 		F4CF5859296DA3250025A043 /* second_rottie.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CF5858296DA3250025A043 /* second_rottie.json */; };
 		F4CF585B296DA4FC0025A043 /* third_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CF585A296DA4FC0025A043 /* third_lottie.json */; };
 		F4CF585D296DA6460025A043 /* last_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CF585C296DA6460025A043 /* last_lottie.json */; };
+		ADBA21CA296D6D5C00BAA26E /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA21C9296D6D5C00BAA26E /* Memo.swift */; };
+		ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA21CC296D70D400BAA26E /* HomeView.swift */; };
+		63D1135E296D8B37002D922D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D1135D296D8B37002D922D /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		F4CF5858296DA3250025A043 /* second_rottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = second_rottie.json; sourceTree = "<group>"; };
 		F4CF585A296DA4FC0025A043 /* third_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = third_lottie.json; sourceTree = "<group>"; };
 		F4CF585C296DA6460025A043 /* last_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = last_lottie.json; sourceTree = "<group>"; };
+		ADBA21C9296D6D5C00BAA26E /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		ADBA21CC296D70D400BAA26E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		63D1135D296D8B37002D922D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +82,9 @@
 			children = (
 				F4CF5840296D834D0025A043 /* OnBoardingView */,
 				16E36C94296D5E5B00C1BB68 /* TMIApp.swift */,
+				ADBA21CB296D6D6100BAA26E /* Model */,
 				16E36C96296D5E5B00C1BB68 /* ContentView.swift */,
+				63D1135D296D8B37002D922D /* DetailView.swift */,
 				16E36C98296D5E5E00C1BB68 /* Assets.xcassets */,
 				16E36C9A296D5E5E00C1BB68 /* TMI.entitlements */,
 				16E36C9B296D5E5E00C1BB68 /* Preview Content */,
@@ -123,6 +131,13 @@
 				F4CF5853296D9A7E0025A043 /* LottieManager.swift */,
 			);
 			path = Lottie;
+		ADBA21CB296D6D6100BAA26E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADBA21C9296D6D5C00BAA26E /* Memo.swift */,
+				ADBA21CC296D70D400BAA26E /* HomeView.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +225,10 @@
 				F4CF584C296D90910025A043 /* OnBoardingView.swift in Sources */,
 				16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */,
 				F4CF5842296D83620025A043 /* First.swift in Sources */,
+				ADBA21CA296D6D5C00BAA26E /* Memo.swift in Sources */,
+				ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */,
+				16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */,
+				63D1135E296D8B37002D922D /* DetailView.swift in Sources */,
 				16E36C95296D5E5B00C1BB68 /* TMIApp.swift in Sources */,
 				F4CF5844296D8FD40025A043 /* Second.swift in Sources */,
 				F4CF5854296D9A7E0025A043 /* LottieManager.swift in Sources */,
