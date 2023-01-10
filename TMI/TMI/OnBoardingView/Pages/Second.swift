@@ -9,7 +9,20 @@ import SwiftUI
 
 struct Second: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Group {
+                Text("간단한 명령어로 즐기는")
+                    .font(.title)
+                    .bold()
+                Spacer().frame(height: 15)
+                Text("손쉬운 메모")
+                    .font(.title)
+                    .bold()
+                LottieManager(jsonName: "second_rottie")
+            }
+            .offset(y: 70)
+        }
+        .padding(.horizontal, 25)
     }
 }
 

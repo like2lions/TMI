@@ -23,13 +23,12 @@ struct First: View {
                     .font(.largeTitle)
                     .bold()
                 Spacer().frame(height: 150)
-                ZStack {
-                        Image("terminal")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .offset(x: -15, y: -50)
-                }
+                Image("terminal")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .offset(x: -15, y: -50)
             }
+            .offset(y: -40)
         }
         .padding(.horizontal, 25)
     }
