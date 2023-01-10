@@ -12,6 +12,10 @@ struct HomeView: View {
         VStack(spacing: 1) {
             terminalBar(user: "Chap", path: "~")
             terminalBar(user: "Chap", path: "~/Desktop")
+            Spacer()
+        }
+        .onAppear {
+            
         }
     }
 }

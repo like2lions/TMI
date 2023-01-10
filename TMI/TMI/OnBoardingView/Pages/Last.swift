@@ -10,6 +10,8 @@ import SwiftUI
 // MARK: -Last
 /// OnBoardingView의 마지막 탭 뷰
 struct Last: View {
+    @Binding var isFirstLaunching: Bool
+    
     var body: some View {
         VStack(alignment: .leading) {
             Group {
@@ -22,7 +24,9 @@ struct Last: View {
             }
             .offset(y: 70)
             //홈뷰로 넘어가는 버튼
-            Button(action: {}) {
+            Button {
+                isFirstLaunching.toggle()
+            } label: {
                 Text("TMI 시작하기")
                     .foregroundColor(.white)
                     .bold()
@@ -35,11 +39,5 @@ struct Last: View {
             .offset(x: 130, y: -170)
         }
         .padding(.horizontal, 25)
-    }
-}
-
-struct Last_Previews: PreviewProvider {
-    static var previews: some View {
-        Last()
     }
 }

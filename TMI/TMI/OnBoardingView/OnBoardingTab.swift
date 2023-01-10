@@ -15,7 +15,7 @@ struct OnBoardingTab: View {
             First()
             Second()
             Third()
-            Last()
+            Last(isFirstLaunching: $isFirstLaunching)
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))

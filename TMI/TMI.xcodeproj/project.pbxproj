@@ -88,6 +88,7 @@
 				16E36CA5296DABCF00C1BB68 /* OnBoardingView */,
 				ADBA21CB296D6D6100BAA26E /* Model */,
 				16E36C96296D5E5B00C1BB68 /* ContentView.swift */,
+				ADBA21CC296D70D400BAA26E /* HomeView.swift */,
 				63D1135D296D8B37002D922D /* DetailView.swift */,
 				16E36C98296D5E5E00C1BB68 /* Assets.xcassets */,
 				16E36C9A296D5E5E00C1BB68 /* TMI.entitlements */,
@@ -143,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				ADBA21C9296D6D5C00BAA26E /* Memo.swift */,
-				ADBA21CC296D70D400BAA26E /* HomeView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
