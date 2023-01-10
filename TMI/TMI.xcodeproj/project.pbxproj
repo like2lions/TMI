@@ -14,7 +14,7 @@
 		F4CF5842296D83620025A043 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5841296D83620025A043 /* First.swift */; };
 		F4CF5844296D8FD40025A043 /* Second.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5843296D8FD40025A043 /* Second.swift */; };
 		F4CF5846296D8FDB0025A043 /* Third.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5845296D8FDB0025A043 /* Third.swift */; };
-		F4CF5848296D8FE30025A043 /* Fourth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5847296D8FE30025A043 /* Fourth.swift */; };
+		F4CF584A296D903C0025A043 /* Last.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5849296D903C0025A043 /* Last.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		F4CF5841296D83620025A043 /* First.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First.swift; sourceTree = "<group>"; };
 		F4CF5843296D8FD40025A043 /* Second.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second.swift; sourceTree = "<group>"; };
 		F4CF5845296D8FDB0025A043 /* Third.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Third.swift; sourceTree = "<group>"; };
-		F4CF5847296D8FE30025A043 /* Fourth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fourth.swift; sourceTree = "<group>"; };
+		F4CF5849296D903C0025A043 /* Last.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Last.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 				F4CF5841296D83620025A043 /* First.swift */,
 				F4CF5843296D8FD40025A043 /* Second.swift */,
 				F4CF5845296D8FDB0025A043 /* Third.swift */,
-				F4CF5847296D8FE30025A043 /* Fourth.swift */,
+				F4CF5849296D903C0025A043 /* Last.swift */,
 			);
 			path = OnBoardingView;
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4CF5846296D8FDB0025A043 /* Third.swift in Sources */,
-				F4CF5848296D8FE30025A043 /* Fourth.swift in Sources */,
+				F4CF584A296D903C0025A043 /* Last.swift in Sources */,
 				16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */,
 				F4CF5842296D83620025A043 /* First.swift in Sources */,
 				16E36C95296D5E5B00C1BB68 /* TMIApp.swift in Sources */,
