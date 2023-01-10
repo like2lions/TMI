@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct OnBoarding: View {
+struct First: View {
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("내 손안의 작은 터미널")
     }
 }
 
-struct OnBoarding_Previews: PreviewProvider {
+struct First_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoarding()
+        First()
     }
 }
