@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+// MARK: -First
+/// OnBoardingView의 첫번째 탭 뷰
+
 struct First: View {
-    
     
     var body: some View {
         VStack(alignment: .leading) {
