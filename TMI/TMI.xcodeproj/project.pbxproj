@@ -20,6 +20,8 @@
 		F4CF5854296D9A7E0025A043 /* LottieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CF5853296D9A7E0025A043 /* LottieManager.swift */; };
 		F4CF5857296D9AF60025A043 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F4CF5856296D9AF60025A043 /* Lottie */; };
 		F4CF5859296DA3250025A043 /* second_rottie.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CF5858296DA3250025A043 /* second_rottie.json */; };
+		F4CF585B296DA4FC0025A043 /* third_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CF585A296DA4FC0025A043 /* third_lottie.json */; };
+		F4CF585D296DA6460025A043 /* last_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = F4CF585C296DA6460025A043 /* last_lottie.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		F4CF584E296D92040025A043 /* OnBoardingTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingTab.swift; sourceTree = "<group>"; };
 		F4CF5853296D9A7E0025A043 /* LottieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieManager.swift; sourceTree = "<group>"; };
 		F4CF5858296DA3250025A043 /* second_rottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = second_rottie.json; sourceTree = "<group>"; };
+		F4CF585A296DA4FC0025A043 /* third_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = third_lottie.json; sourceTree = "<group>"; };
+		F4CF585C296DA6460025A043 /* last_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = last_lottie.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 		F4CF5850296D9A090025A043 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				F4CF585C296DA6460025A043 /* last_lottie.json */,
+				F4CF585A296DA4FC0025A043 /* third_lottie.json */,
 				F4CF5858296DA3250025A043 /* second_rottie.json */,
 				F4CF5853296D9A7E0025A043 /* LottieManager.swift */,
 			);
@@ -183,6 +189,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CF585B296DA4FC0025A043 /* third_lottie.json in Resources */,
+				F4CF585D296DA6460025A043 /* last_lottie.json in Resources */,
 				F4CF5859296DA3250025A043 /* second_rottie.json in Resources */,
 				16E36C9D296D5E5E00C1BB68 /* Preview Assets.xcassets in Resources */,
 				16E36C99296D5E5E00C1BB68 /* Assets.xcassets in Resources */,

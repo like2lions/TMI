@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: -Second
+/// OnBoardingView의 두번째 탭 뷰
 struct Second: View {
     var body: some View {
         VStack(alignment: .leading) {
