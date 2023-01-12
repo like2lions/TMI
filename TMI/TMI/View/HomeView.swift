@@ -40,7 +40,7 @@ struct HomeView: View {
                     .disableAutocorrection(true) // 자동 수정 비활성화
                     .focused($focusField, equals: .cmd) // 새로 생긴 textField를 focus
                     .onSubmit {
-                        historyStore.histories.append(History(command: cmd, result: "result"))
+                        historyStore.checkCmd(cmd: cmd)
                         focusField = .cmd
                         cmd = ""
                     }
