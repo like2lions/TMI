@@ -41,7 +41,6 @@ struct TerminalBar: View {
                     .foregroundColor(secondColor)
                     .frame(width: 20, height: 30)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }

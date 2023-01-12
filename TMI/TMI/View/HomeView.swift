@@ -22,6 +22,7 @@ struct HomeView: View {
                         Text(history.command)
                     }
                     Text(history.result)
+                        .padding(.horizontal, 5)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
