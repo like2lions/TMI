@@ -7,9 +7,15 @@
 
 import SwiftUI
 
+enum Field: Hashable {
+    case cmd
+}
+
 struct HomeView: View {
     @ObservedObject var historyStore: HistoryStore = HistoryStore()
     @State var cmd: String = ""
+    @FocusState var focusField: Field?
+    
     var user = "Chap"
     var path = "~"
     
@@ -30,8 +36,12 @@ struct HomeView: View {
             HStack {
                 TerminalBar(user: user, path: path)
                 TextField("", text: $cmd)
+                    .textInputAutocapitalization(.never) // 첫 글자 대문자 비활성화
+                    .disableAutocorrection(true) // 자동 수정 비활성화
+                    .focused($focusField, equals: .cmd) // 새로 생긴 textField를 focus
                     .onSubmit {
                         historyStore.histories.append(History(command: cmd, result: "result"))
+                        focusField = .cmd
                         cmd = ""
                     }
                     .frame(maxWidth: .infinity)
