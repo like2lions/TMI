@@ -12,24 +12,31 @@ struct HomeView: View {
     @State private var cmdHistory: [String] = []
     
     var body: some View {
-        VStack(spacing: 1) {
-            ForEach(cmdHistory, id: \.self) { history in
+        ScrollView {
+            VStack(spacing: 1) {
+                ForEach(cmdHistory, id: \.self) { history in
+                    HStack {
+                        terminalBar(user: "Chap", path: "~")
+                        Text("\(history)")
+                        
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
                 HStack {
                     terminalBar(user: "Chap", path: "~")
-                    Text("\(history)")
+                    TextField("", text: $cmd)
+                        .accentColor(.yellow)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                        .onSubmit {
+                            cmdHistory.append(cmd)
+                            cmd = ""
+                        }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
-            terminalBar(user: "Chap", path: "~")
-            terminalBar(user: "Chap", path: "~/Desktop")
-            TextField("", text: $cmd)
-                .autocorrectionDisabled()
-                .
-                .onSubmit {
-                    cmdHistory.append(cmd)
-                    cmd = ""
-                }
+            .padding(.top, 1)
         }
-        .padding(.top, 1)
     }
 }
 
@@ -73,7 +80,7 @@ struct terminalBar: View {
                     .foregroundColor(secondColor)
                     .frame(width: 20, height: 30)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(alignment: .leading)
         }
     }
 }
