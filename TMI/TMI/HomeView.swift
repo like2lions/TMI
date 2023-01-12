@@ -13,11 +13,11 @@ struct HomeView: View {
     @State private var tilde: String = "~"
     @State private var slash: String = "/"
     @State private var commandAll: [String] = []
+    @State private var indexNumber: Int = -1
     
     var body: some View {
         
         VStack(spacing: 0) {
-            
             ForEach(Array(commandAll.enumerated()), id: \.offset) { index, text in
                 
                 HStack {
@@ -38,7 +38,7 @@ struct HomeView: View {
             } else {
                 HStack(spacing: 0) {
                     ZStack {
-                        terminalBar(user: "Chap", path: commandAll[0])
+                        terminalBar(user: "Chap", path: commandAll[indexNumber])
                     }
                     TextField("명령어를 입력해주세요", text: $commandText)
                 }
@@ -48,6 +48,7 @@ struct HomeView: View {
         .onSubmit {
             commandAll.append(tilde + slash + commandText)
             commandText = ""
+            indexNumber += 1
         }
         .padding(.top, 1)
     }
