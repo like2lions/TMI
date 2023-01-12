@@ -8,13 +8,39 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var historyStore: HistoryStore = HistoryStore()
+    @State var cmd: String = ""
+    var user = "Chap"
+    var path = "~"
+    
     var body: some View {
-        VStack(spacing: 1) {
-            TerminalBar(user: "Chap", path: "~")
-            TerminalBar(user: "Chap", path: "~/Desktop")
+        ScrollView {
+            ForEach(historyStore.histories) { history in
+                VStack(alignment: .leading) {
+                    HStack {
+                        TerminalBar(user: user, path: path)
+                        Text(history.command)
+                    }
+                    Text(history.result)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            
+            HStack {
+                TerminalBar(user: user, path: path)
+                TextField("", text: $cmd)
+                    .onSubmit {
+                        historyStore.histories.append(History(command: cmd, result: "result"))
+                        cmd = ""
+                    }
+                    .frame(maxWidth: .infinity)
+                    
+            }
+            
             Spacer()
         }
         .padding(.top, 1)
+        
     }
 }
 
