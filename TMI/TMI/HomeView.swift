@@ -9,12 +9,14 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack(spacing: 1) {
-            terminalBar(user: "Chap", path: "~")
-            terminalBar(user: "Chap", path: "~/Desktop")
-            Spacer()
+        ScrollView {
+            VStack(spacing: 1) {
+                terminalBar(user: "Chap", path: "~")
+                terminalBar(user: "Chap", path: "~/Desktop")
+                Spacer()
+            }
+            .padding(.top, 1)
         }
-        .padding(.top, 1)
     }
 }
 
