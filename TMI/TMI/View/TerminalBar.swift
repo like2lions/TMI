@@ -1,30 +1,13 @@
 //
-//  HomeView.swift
+//  TerminalBar.swift
 //  TMI
 //
-//  Created by 박성민 on 2023/01/10.
+//  Created by do hee kim on 2023/01/12.
 //
 
 import SwiftUI
 
-struct HomeView: View {
-    var body: some View {
-        VStack(spacing: 1) {
-            terminalBar(user: "Chap", path: "~")
-            terminalBar(user: "Chap", path: "~/Desktop")
-            Spacer()
-        }
-        .padding(.top, 1)
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
-
-struct terminalBar: View {
+struct TerminalBar: View {
     let user: String
     let path: String
     
@@ -58,7 +41,6 @@ struct terminalBar: View {
                     .foregroundColor(secondColor)
                     .frame(width: 20, height: 30)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
@@ -68,8 +50,6 @@ struct MyShape: Shape {
         var path = Path()
 
         path.move(to: CGPoint(x: rect.minX, y: rect.minY))
-//        path.addQuadCurve(to: CGPoint(x: rect.minX, y: rect.maxY),
-//            control: CGPoint(x: rect.midX, y: rect.midY))
         path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
         path.addLine(to: CGPoint(x: rect.maxX, y: (rect.minY + rect.maxY) / 2))
         path.closeSubpath()
