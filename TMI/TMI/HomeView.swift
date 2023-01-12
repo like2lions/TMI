@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var cmd: String = ""
+    @State private var cmdHistory: [String] = []
+    
     var body: some View {
         VStack(spacing: 1) {
+            ForEach(cmdHistory, id: \.self) { history in
+                HStack {
+                    terminalBar(user: "Chap", path: "~")
+                    Text("\(history)")
+                }
+            }
             terminalBar(user: "Chap", path: "~")
             terminalBar(user: "Chap", path: "~/Desktop")
-            Spacer()
+            TextField("", text: $cmd)
+                .autocorrectionDisabled()
+                .
+                .onSubmit {
+                    cmdHistory.append(cmd)
+                    cmd = ""
+                }
         }
         .padding(.top, 1)
     }
