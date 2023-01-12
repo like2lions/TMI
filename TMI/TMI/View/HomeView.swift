@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum Field: Hashable {
-    case cmd
+    case cmdLine
 }
 
 struct HomeView: View {
@@ -38,10 +38,10 @@ struct HomeView: View {
                 TextField("", text: $cmd)
                     .textInputAutocapitalization(.never) // 첫 글자 대문자 비활성화
                     .disableAutocorrection(true) // 자동 수정 비활성화
-                    .focused($focusField, equals: .cmd) // 새로 생긴 textField를 focus
+                    .focused($focusField, equals: .cmdLine) // 새로 생긴 textField를 focus
                     .onSubmit {
                         historyStore.checkCmd(cmd: cmd)
-                        focusField = .cmd
+                        focusField = .cmdLine
                         cmd = ""
                     }
                     .frame(maxWidth: .infinity)
