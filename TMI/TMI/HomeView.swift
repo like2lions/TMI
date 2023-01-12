@@ -17,6 +17,7 @@ struct HomeView: View {
     var body: some View {
         
         VStack(spacing: 0) {
+            
             ForEach(Array(commandAll.enumerated()), id: \.offset) { index, text in
                 
                 HStack {
@@ -30,7 +31,7 @@ struct HomeView: View {
             }
             
             if commandAll == [] {
-                HStack {
+                HStack(spacing: 0) {
                     terminalBar(user: "Chap", path: tilde)
                     TextField("명령어를 입력해주세요", text: $commandText)
                 }
