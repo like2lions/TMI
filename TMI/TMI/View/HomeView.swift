@@ -36,6 +36,7 @@ struct HomeView: View {
             HStack {
                 TerminalBar(user: user, path: path)
                 TextField("", text: $cmd)
+                    .accentColor(.yellow) // 커서 색상 변경
                     .textInputAutocapitalization(.never) // 첫 글자 대문자 비활성화
                     .disableAutocorrection(true) // 자동 수정 비활성화
                     .focused($focusField, equals: .cmdLine) // 새로 생긴 textField를 focus
