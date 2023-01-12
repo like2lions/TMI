@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var barStore: BarItemStore = BarItemStore()
     var body: some View {
         ScrollView {
             VStack(spacing: 1) {
-                terminalBar(user: "Chap", path: "~")
-                terminalBar(user: "Chap", path: "~/Desktop")
+                ForEach(barStore.barItems, id: \.id) { barItem in
+                    BarItemHistoryView(barItem: barItem)
+                }
+                BarItemAddView(barStore: barStore)
                 Spacer()
             }
             .padding(.top, 1)
@@ -60,7 +63,7 @@ struct terminalBar: View {
                     .foregroundColor(secondColor)
                     .frame(width: 20, height: 30)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(alignment: .leading)
         }
     }
 }

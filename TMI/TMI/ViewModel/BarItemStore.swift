@@ -7,11 +7,11 @@
 
 import Foundation
 
-class BarStore: ObservableObject {
+class BarItemStore: ObservableObject {
     
     @Published var barItems: [BarItem] = []
     
-    func addBar(_ barItem: BarItem) {
+    func addBarItem(_ barItem: BarItem) {
         barItems.append(barItem)
     }
     
