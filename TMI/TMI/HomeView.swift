@@ -16,34 +16,41 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            ScrollView {
-                ForEach(Array(commandAll.enumerated()), id: \.offset) { index, text in
-                    
-                    HStack {
-                        ZStack {
-                            terminalBar(user: "Chap", path: text)
-                            Text("\(index + 1)")
-                                .foregroundColor(.white)
-                        }
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }
+            
+            ForEach(Array(commandAll.enumerated()), id: \.offset) { index, text in
                 
-                HStack(spacing: 0) {
+                HStack {
+                    
+                    terminalBar(user: "Chap", path: text)
+                    Text("\(index + 1)")
+                        .foregroundColor(.white)
+                    
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            
+            if commandAll == [] {
+                HStack {
                     terminalBar(user: "Chap", path: tilde)
                     TextField("명령어를 입력해주세요", text: $commandText)
                 }
-            }
-            .onSubmit {
-                commandAll.append(tilde + slash + commandText)
-                commandText = ""
+            } else {
+                HStack(spacing: 0) {
+                    ZStack {
+                        terminalBar(user: "Chap", path: commandAll[0])
+                    }
+                    TextField("명령어를 입력해주세요", text: $commandText)
+                }
             }
             Spacer()
         }
+        .onSubmit {
+            commandAll.append(tilde + slash + commandText)
+            commandText = ""
+        }
+        .padding(.top, 1)
     }
 }
-//        .padding(.top, 1)
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
