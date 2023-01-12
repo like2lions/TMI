@@ -8,15 +8,42 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State private var commandText: String = ""
+    @State private var tilde: String = "~"
+    @State private var slash: String = "/"
+    @State private var commandAll: [String] = []
+    
     var body: some View {
-        VStack(spacing: 1) {
-            terminalBar(user: "Chap", path: "~")
-            terminalBar(user: "Chap", path: "~/Desktop")
+        VStack {
+            ScrollView {
+                ForEach(Array(commandAll.enumerated()), id: \.offset) { index, text in
+                    
+                    HStack {
+                        ZStack {
+                            terminalBar(user: "Chap", path: text)
+                            Text("\(index + 1)")
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                
+                HStack(spacing: 0) {
+                    terminalBar(user: "Chap", path: tilde)
+                    TextField("명령어를 입력해주세요", text: $commandText)
+                }
+            }
+            .onSubmit {
+                commandAll.append(tilde + slash + commandText)
+                commandText = ""
+            }
             Spacer()
         }
-        .padding(.top, 1)
     }
 }
+//        .padding(.top, 1)
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
@@ -66,10 +93,10 @@ struct terminalBar: View {
 struct MyShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
-
+        
         path.move(to: CGPoint(x: rect.minX, y: rect.minY))
-//        path.addQuadCurve(to: CGPoint(x: rect.minX, y: rect.maxY),
-//            control: CGPoint(x: rect.midX, y: rect.midY))
+        //        path.addQuadCurve(to: CGPoint(x: rect.minX, y: rect.maxY),
+        //            control: CGPoint(x: rect.midX, y: rect.midY))
         path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
         path.addLine(to: CGPoint(x: rect.maxX, y: (rect.minY + rect.maxY) / 2))
         path.closeSubpath()
@@ -80,7 +107,7 @@ struct MyShape: Shape {
 struct MyShape2: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
-
+        
         path.move(to: CGPoint(x: rect.maxX, y: (rect.minY + rect.maxY) / 2))
         path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
         path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
