@@ -12,17 +12,16 @@ enum Field: Hashable {
 }
 
 struct HomeView: View {
-    @ObservedObject var historyStore: HistoryStore = HistoryStore()
     @State var cmd: String = ""
     @FocusState var focusField: Field?
-    @StateObject private var network = RequestAPI.shared
+    @StateObject var vm: HomeViewModel = HomeViewModel()
     
     var user = "Chap"
     var path = "~"
     
     var body: some View {
         ScrollView {
-            ForEach(historyStore.histories) { history in
+            ForEach(vm.histories) { history in
                 VStack(alignment: .leading) {
                     HStack {
                         TerminalBar(user: user, path: path)
@@ -57,9 +56,14 @@ struct HomeView: View {
                         }
                     }
                     .onSubmit {
-                        historyStore.checkCmd(cmd: cmd)
-                        focusField = .cmdLine
-                        cmd = ""
+                        if cmd == "weather" {
+                            vm.getWeather()
+                            print("combine weather : \(vm.weather)")
+                        } else {
+                            vm.checkCmd(cmd: cmd)
+                            focusField = .cmdLine
+                            cmd = ""
+                        }
                     }
                     .frame(maxWidth: .infinity)
                 

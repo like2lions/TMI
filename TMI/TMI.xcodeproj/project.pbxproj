@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		161EB9742971088400536CC6 /* WeatherRawJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161EB9732971088400536CC6 /* WeatherRawJson.swift */; };
+		161EB977297124DD00536CC6 /* WeatherStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161EB976297124DD00536CC6 /* WeatherStore.swift */; };
+		161EB9792971254B00536CC6 /* TMIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161EB9782971254B00536CC6 /* TMIService.swift */; };
+		161EB97F2971264500536CC6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161EB97E2971264400536CC6 /* HomeViewModel.swift */; };
 		16E36C95296D5E5B00C1BB68 /* TMIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36C94296D5E5B00C1BB68 /* TMIApp.swift */; };
 		16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36C96296D5E5B00C1BB68 /* ContentView.swift */; };
 		16E36C99296D5E5E00C1BB68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E36C98296D5E5E00C1BB68 /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 /* Begin PBXFileReference section */
 		161EB9732971088400536CC6 /* WeatherRawJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRawJson.swift; sourceTree = "<group>"; };
 		161EB9752971193200536CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		161EB976297124DD00536CC6 /* WeatherStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStore.swift; sourceTree = "<group>"; };
+		161EB9782971254B00536CC6 /* TMIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMIService.swift; sourceTree = "<group>"; };
+		161EB97E2971264400536CC6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		16E36C91296D5E5B00C1BB68 /* TMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E36C94296D5E5B00C1BB68 /* TMIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMIApp.swift; sourceTree = "<group>"; };
 		16E36C96296D5E5B00C1BB68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,6 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				EA9C5D2D29702D6B005D1910 /* HistoryStore.swift */,
+				161EB976297124DD00536CC6 /* WeatherStore.swift */,
+				161EB9782971254B00536CC6 /* TMIService.swift */,
+				161EB97E2971264400536CC6 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -265,6 +274,9 @@
 				EA9C5D2E29702D6B005D1910 /* HistoryStore.swift in Sources */,
 				63D1135E296D8B37002D922D /* DetailView.swift in Sources */,
 				16E36CB5296DABCF00C1BB68 /* Second.swift in Sources */,
+				161EB97F2971264500536CC6 /* HomeViewModel.swift in Sources */,
+				161EB9792971254B00536CC6 /* TMIService.swift in Sources */,
+				161EB977297124DD00536CC6 /* WeatherStore.swift in Sources */,
 				16E36CB6296DABCF00C1BB68 /* First.swift in Sources */,
 				EA9C5D3029702E42005D1910 /* TerminalBar.swift in Sources */,
 				16E36CBE296DABCF00C1BB68 /* OnBoardingView.swift in Sources */,
