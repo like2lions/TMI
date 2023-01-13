@@ -9,18 +9,24 @@ import SwiftUI
 
 struct WeatherView: View {
     
+    @ObservedObject var weatherViewModel: WeatherViewModel
+    
     var body: some View {
-        HStack {
-           Text("천왕동")
-            Text("25°")
-            Image(systemName: "sun.max")
-            Text("clear")
+        
+        HStack(spacing: 2) {
+            Text(weatherViewModel.cityName)
+            Text(weatherViewModel.temperature)
+            Image(systemName: weatherViewModel.weatherIcon)
+            Text(weatherViewModel.weatherDescription)
+        }
+        .onAppear {
+            weatherViewModel.refresh()
         }
     }
 }
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView()
+        WeatherView(weatherViewModel: WeatherViewModel(weatherService: WeatherService()))
     }
 }

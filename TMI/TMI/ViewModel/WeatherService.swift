@@ -27,7 +27,7 @@ final class WeatherService: NSObject {
     
     
     private func makeDataRequest(forCoordinates coordinates: CLLocationCoordinate2D) {
-        guard let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(API_KEY)&units=metric".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        guard let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(API_KEY)&units=metric&lang=kr".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -50,23 +50,3 @@ extension WeatherService: CLLocationManagerDelegate {
         print("위치정보 받아오기 실패: \(error.localizedDescription)")
     }
 }
-
-//struct APIResponse {
-//    let name: String
-//    let main: APIMain
-//    let weather: [APIWeather]
-//}
-
-//struct APIMain: Decodable {
-//    let temp: Double
-//}
-
-//struct APIWeather: Decodable {
-//    let description: String
-//    let iconName: String
-//    
-//    enum CodingKeys: String, CodingKey {
-//        case description
-//        case iconName = "main"
-//    }
-//}
