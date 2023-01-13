@@ -9,9 +9,11 @@ import Foundation
 
 class HistoryStore: ObservableObject {
     @Published var histories: [History] = []
-    @Published var loc: region = .Seoul
+    @Published var loc: Region = .Seoul
     @Published var setLocOn: Bool = false
-    var regionCode = "11B10101"
+    var regionCode: String  {
+        getRegionCode(region: loc)
+    }
     
     var availableCmd: [String] = ["clear", "ls", "set loc"]
     
@@ -19,16 +21,12 @@ class HistoryStore: ObservableObject {
         if setLocOn {
             switch Int(cmd) ?? 0 {
             case 1:
-                print("seoul")
                 loc = .Seoul
             case 2:
-                print("Incheon")
                 loc = .Incheon
             case 3:
-                print("Busan")
                 loc = .Busan
             case 4:
-                print("Daegu")
                 loc = .Daegu
             default:
                 print("Unknown")
@@ -53,14 +51,21 @@ class HistoryStore: ObservableObject {
         }
     }
     
-    func setLocConfig(loc: String) {
-        // loc validation check
-        //
-        // change the current loc
+    func getRegionCode(region: Region) -> String {
+        switch region {
+        case .Seoul:
+            return "11B10101"
+        case .Incheon:
+            return "11B20201"
+        case .Busan:
+            return "11H20201"
+        case .Daegu:
+            return "11H10701"
+        }
     }
 }
 
-enum region {
+enum Region {
     case Seoul
     case Incheon
     case Busan
