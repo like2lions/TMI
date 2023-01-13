@@ -10,5 +10,5 @@ import Foundation
 struct History: Identifiable {
     var id = UUID().uuidString
     var command: String
-    var result: String
+    var result: String?
 }

@@ -27,8 +27,10 @@ struct HomeView: View {
                         TerminalBar(user: user, path: path)
                         Text(history.command)
                     }
-                    Text(history.result)
-                        .padding(.horizontal, 5)
+                    if let history = history.result {
+                        Text(history)
+                            .padding(.horizontal, 5)
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
