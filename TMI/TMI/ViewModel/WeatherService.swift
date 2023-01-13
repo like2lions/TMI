@@ -14,6 +14,11 @@ final class WeatherService: NSObject {
     private let API_KEY = "7abc782c5f925882bf8b79a106ecf88e"
     private var compltionHandler: ((Weather) -> Void)?
     
+    override init() {
+        super.init()
+        locationManager.delegate = self
+    }
+    
     func loadWeatherData(_ completionHandler: @escaping((Weather) -> Void)) {
         self.compltionHandler = completionHandler
         locationManager.requestWhenInUseAuthorization()
@@ -32,6 +37,17 @@ final class WeatherService: NSObject {
             }
         }
         .resume()
+    }
+}
+
+extension WeatherService: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        makeDataRequest(forCoordinates: location.coordinate)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("위치정보 받아오기 실패: \(error.localizedDescription)")
     }
 }
 
