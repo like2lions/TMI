@@ -24,6 +24,7 @@
 		16E36CBF296DABCF00C1BB68 /* OnBoardingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CB3296DABCF00C1BB68 /* OnBoardingTab.swift */; };
 		16E36CC2296DACCA00C1BB68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 16E36CC1296DACCA00C1BB68 /* Lottie */; };
 		63D1135E296D8B37002D922D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D1135D296D8B37002D922D /* DetailView.swift */; };
+		AD93F93D29712B6900CBE7CB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD93F93C29712B6900CBE7CB /* LocationManager.swift */; };
 		ADBA21CA296D6D5C00BAA26E /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA21C9296D6D5C00BAA26E /* Memo.swift */; };
 		ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA21CC296D70D400BAA26E /* HomeView.swift */; };
 		EA9C5D2A29702D2E005D1910 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C5D2929702D2E005D1910 /* History.swift */; };
@@ -50,6 +51,7 @@
 		16E36CB2296DABCF00C1BB68 /* OnBoardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		16E36CB3296DABCF00C1BB68 /* OnBoardingTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingTab.swift; sourceTree = "<group>"; };
 		63D1135D296D8B37002D922D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		AD93F93C29712B6900CBE7CB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		ADBA21C9296D6D5C00BAA26E /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		ADBA21CC296D70D400BAA26E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EA9C5D2929702D2E005D1910 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				16E36C94296D5E5B00C1BB68 /* TMIApp.swift */,
 				16E36C96296D5E5B00C1BB68 /* ContentView.swift */,
 				16E36CA5296DABCF00C1BB68 /* OnBoardingView */,
+				AD93F93E29712B7200CBE7CB /* Service */,
 				ADBA21CB296D6D6100BAA26E /* Model */,
 				EA9C5D2B29702D40005D1910 /* View */,
 				EA9C5D2C29702D52005D1910 /* ViewModel */,
@@ -141,6 +144,14 @@
 				16E36CB1296DABCF00C1BB68 /* LottieManager.swift */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		AD93F93E29712B7200CBE7CB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AD93F93C29712B6900CBE7CB /* LocationManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		ADBA21CB296D6D6100BAA26E /* Model */ = {
@@ -260,6 +271,7 @@
 				63D1135E296D8B37002D922D /* DetailView.swift in Sources */,
 				16E36CB5296DABCF00C1BB68 /* Second.swift in Sources */,
 				16E36CB6296DABCF00C1BB68 /* First.swift in Sources */,
+				AD93F93D29712B6900CBE7CB /* LocationManager.swift in Sources */,
 				EA9C5D3029702E42005D1910 /* TerminalBar.swift in Sources */,
 				16E36CBE296DABCF00C1BB68 /* OnBoardingView.swift in Sources */,
 				EA9C5D2A29702D2E005D1910 /* History.swift in Sources */,
@@ -391,6 +403,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TMI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -427,6 +440,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TMI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
