@@ -29,6 +29,12 @@ class HistoryStore: ObservableObject {
                 loc = .Busan
             case 4:
                 loc = .Daegu
+            case 5:
+                loc = .Dokdo
+            case 6:
+                loc = .Gimpo
+            case 7:
+                loc = .Jeju
             default:
                 print("Unknown")
             }
@@ -43,11 +49,11 @@ class HistoryStore: ObservableObject {
             case "loc":
                 histories.append(History(command: cmd, result: "Current Location: \(loc)"))
             case "set loc":
-                histories.append(History(command: cmd, result: "Locations: \n 1: Seoul \n 2: Incheon \n 3: Busan \n 4: Daegu"))
+                histories.append(History(command: cmd, result: "Locations: \n 1: Seoul \n 2: Incheon \n 3: Busan \n 4: Daegu \n 5: Dokco \n 6: Gimpo \n 7: Jeju"))
                 setLocOn.toggle()
             case "weather":
-                network.fetchData()
-                print(network.weather)
+                network.fetchData(regionCode: regionCode)
+                histories.append(History(command: cmd, result: "loc: \(loc) \nweather: \(network.weather)"))
                 
             default:
                 histories.append(History(command: cmd, result: "command not found: \(cmd)"))
@@ -66,6 +72,12 @@ class HistoryStore: ObservableObject {
             return "11H20201"
         case .Daegu:
             return "11H10701"
+        case .Dokdo:
+            return "11E00102"
+        case .Gimpo:
+            return "11B20102"
+        case .Jeju:
+            return "11G00201"
         }
     }
 }
@@ -75,6 +87,9 @@ enum Region {
     case Incheon
     case Busan
     case Daegu
+    case Dokdo
+    case Gimpo
+    case Jeju
 }
 
 
@@ -83,39 +98,28 @@ class RequestAPI: ObservableObject {
     private init() { }
     @Published var weather: String = "맑음"
     
-    func fetchData() {
-        print("0. fetch Data")
-        guard let url = URL(string: "http://apis.data.go.kr/1360000/VilageFcstMsgService/getLandFcst?serviceKey=GMt2vpUCR9RRx1vj6XlA96sJew6K9xFuIpgysZi7dVu7iCK76olLJw8lxeATAk%2Bg3AqdFRQPlPtmmSxZ8B%2F5Pg%3D%3D&pageNo=1&numOfRows=10&dataType=JSON&regId=11A00101") else {
-            print("url error")
+    
+    func fetchData(regionCode: String) {
+        guard let url = URL(string: "http://apis.data.go.kr/1360000/VilageFcstMsgService/getLandFcst?serviceKey=GMt2vpUCR9RRx1vj6XlA96sJew6K9xFuIpgysZi7dVu7iCK76olLJw8lxeATAk%2Bg3AqdFRQPlPtmmSxZ8B%2F5Pg%3D%3D&pageNo=1&numOfRows=10&dataType=JSON&regId=\(regionCode)") else {
             return
         }
-        print("1. url : \(url)")
         let session = URLSession(configuration: .default)
-        print("2. session : \(session)")
         
         let task = session.dataTask(with: url) { data, response, error in
-            print("3. task")
             if let error = error {
-                print("4. error")
-                print("Error : \(error.localizedDescription)")
                 return
             }
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                print("response error")
                 return
             }
             guard let data = data else {
-                print("data error")
                 return
             }
             
             do {
-                print("data : \(data)")
                 let apiResponse = try JSONDecoder().decode(WeatherResponse.self, from: data)
-                print("apiResponse : \(apiResponse)")
                 DispatchQueue.main.async {
                     self.weather = (apiResponse.response.body.items["item"]?.first!.wf)!
-                    print("weather : \(self.weather)")
                 }
             } catch let DecodingError.dataCorrupted(context) {
                 print(context)
@@ -130,8 +134,6 @@ class RequestAPI: ObservableObject {
                 print("codingPath:", context.codingPath)
             } catch {
                 print("error: ", error)
-            } catch(let err) {
-                print(err.localizedDescription)
             }
         }
         task.resume()
