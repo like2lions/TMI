@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161EB9742971088400536CC6 /* WeatherRawJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161EB9732971088400536CC6 /* WeatherRawJson.swift */; };
 		16E36C95296D5E5B00C1BB68 /* TMIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36C94296D5E5B00C1BB68 /* TMIApp.swift */; };
 		16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36C96296D5E5B00C1BB68 /* ContentView.swift */; };
 		16E36C99296D5E5E00C1BB68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E36C98296D5E5E00C1BB68 /* Assets.xcassets */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		161EB9732971088400536CC6 /* WeatherRawJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRawJson.swift; sourceTree = "<group>"; };
+		161EB9752971193200536CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		16E36C91296D5E5B00C1BB68 /* TMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E36C94296D5E5B00C1BB68 /* TMIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMIApp.swift; sourceTree = "<group>"; };
 		16E36C96296D5E5B00C1BB68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		16E36C93296D5E5B00C1BB68 /* TMI */ = {
 			isa = PBXGroup;
 			children = (
+				161EB9752971193200536CC6 /* Info.plist */,
 				16E36C94296D5E5B00C1BB68 /* TMIApp.swift */,
 				16E36C96296D5E5B00C1BB68 /* ContentView.swift */,
 				16E36CA5296DABCF00C1BB68 /* OnBoardingView */,
@@ -148,6 +152,7 @@
 			children = (
 				ADBA21C9296D6D5C00BAA26E /* Memo.swift */,
 				EA9C5D2929702D2E005D1910 /* History.swift */,
+				161EB9732971088400536CC6 /* WeatherRawJson.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				ADBA21CA296D6D5C00BAA26E /* Memo.swift in Sources */,
 				ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */,
 				16E36CBF296DABCF00C1BB68 /* OnBoardingTab.swift in Sources */,
+				161EB9742971088400536CC6 /* WeatherRawJson.swift in Sources */,
 				16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */,
 				16E36CB7296DABCF00C1BB68 /* Third.swift in Sources */,
 				16E36CBD296DABCF00C1BB68 /* LottieManager.swift in Sources */,
@@ -391,6 +397,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TMI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TMI/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -427,6 +434,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TMI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TMI/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

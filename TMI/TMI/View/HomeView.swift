@@ -15,6 +15,7 @@ struct HomeView: View {
     @ObservedObject var historyStore: HistoryStore = HistoryStore()
     @State var cmd: String = ""
     @FocusState var focusField: Field?
+    @StateObject private var network = RequestAPI.shared
     
     var user = "Chap"
     var path = "~"
