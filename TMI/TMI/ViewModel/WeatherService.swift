@@ -7,8 +7,9 @@
 
 import Foundation
 import CoreLocation
+import Combine
 
-final class WeatherService: NSObject {
+public final class WeatherService: NSObject {
     
     private let locationManager = CLLocationManager()
     private let API_KEY = "7abc782c5f925882bf8b79a106ecf88e"
@@ -25,7 +26,6 @@ final class WeatherService: NSObject {
         locationManager.startUpdatingLocation()
     }
     
-    
     private func makeDataRequest(forCoordinates coordinates: CLLocationCoordinate2D) {
         guard let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(API_KEY)&units=metric&lang=kr".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         guard let url = URL(string: urlString) else { return }
@@ -41,12 +41,12 @@ final class WeatherService: NSObject {
 }
 
 extension WeatherService: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         makeDataRequest(forCoordinates: location.coordinate)
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("위치정보 받아오기 실패: \(error.localizedDescription)")
     }
 }

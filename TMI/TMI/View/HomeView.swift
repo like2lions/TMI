@@ -17,15 +17,12 @@ struct HomeView: View {
     @State var cmd: String = ""
     @FocusState var focusField: Field?
     
-    @ObservedObject var weatherViewModel: WeatherViewModel
-    
     var user = "Chap"
     var path = "~"
     
     var body: some View {
         
         VStack {
-            WeatherView(weatherViewModel: weatherViewModel)
             ScrollView {
                 ForEach(historyStore.histories) { history in
                     VStack(alignment: .leading) {
@@ -76,7 +73,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(weatherViewModel: WeatherViewModel(weatherService: WeatherService()))
+        HomeView()
     }
 }
 
