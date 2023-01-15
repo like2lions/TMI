@@ -16,29 +16,8 @@ enum HttpError: LocalizedError {
 class WeatherService {
     private var cancellables = Set<AnyCancellable>()
     
-    var url = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?"
-    let serviceKey = "yo8%2FWmc7Kn5vAcqoTkGwPm3rkWuNYg%2BnFlniZvkv44rlsdJQURxVTze1WcieTQKv6oRXV77gGPUaWTWUxqya8g%3D%3D"
-    let dataType = "JSON"
-    let numOfRows = "60"
-    var base_date: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "ko_kr")
-        dateFormatter.timeZone = TimeZone(abbreviation: "KST")
-        dateFormatter.dateFormat = "yyyyMMdd"
-        return dateFormatter.string(from: Date())
-    }
-    var base_time: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "ko_kr")
-        dateFormatter.timeZone = TimeZone(abbreviation: "KST")
-        dateFormatter.dateFormat = "HH00"
-        return dateFormatter.string(from: Date())
-    }
-    var nx: String?
-    var ny: String?
-    
     func requestDataCombine<T: Codable>(type: T.Type) -> AnyPublisher<T, HttpError> {
-          return URLSession.shared.dataTaskPublisher(for: URL(string: self.url)!)
+          return URLSession.shared.dataTaskPublisher(for: createURL())
             .receive(on: DispatchQueue.main)
             .tryMap() { data, response in
                 guard let httpResponse = response as? HTTPURLResponse else {
@@ -66,6 +45,40 @@ class WeatherService {
             }
             .eraseToAnyPublisher()
     }
+    
+    func createURL() -> URL {
+        var components = URLComponents()
+        
+        components.scheme = "https"
+        components.host = "apis.data.go.kr"
+        components.queryItems = [
+            URLQueryItem(name: "serviceKey", value: "yo8%2FWmc7Kn5vAcqoTkGwPm3rkWuNYg%2BnFlniZvkv44rlsdJQURxVTze1WcieTQKv6oRXV77gGPUaWTWUxqya8g%3D%3D"),
+            URLQueryItem(name: "dataType", value: "JSON"),
+            URLQueryItem(name: "numOfRows", value: "60"),
+            URLQueryItem(name: "base_date", value: currentDate()),
+            URLQueryItem(name: "base_time", value: currentTime()),
+            URLQueryItem(name: "nx", value: "57"),
+            URLQueryItem(name: "ny", value: "22")
+        ]
+        return components.url!
+    }
+    
+    func currentDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_kr")
+        dateFormatter.timeZone = TimeZone(abbreviation: "KST")
+        dateFormatter.dateFormat = "yyyyMMdd"
+        return dateFormatter.string(from: Date())
+    }
+
+    func currentTime() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_kr")
+        dateFormatter.timeZone = TimeZone(abbreviation: "KST")
+        dateFormatter.dateFormat = "HH00"
+        return dateFormatter.string(from: Date())
+    }
+    
 }
 
 
