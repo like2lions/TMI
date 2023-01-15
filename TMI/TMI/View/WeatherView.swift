@@ -25,10 +25,11 @@ struct WeatherView: View {
                         showWeather.toggle()
                     }
                 }
-            Text("\(coordinate.latitude), \(coordinate.longitude)")
+            Text("\(coordinate.longitude), \(coordinate.latitude)")
         }
         .onAppear {
             locationManager.checkIfLocationServiceIsEnabled()
+            URL.urlWith(coordinate: coordinate)
         }
     }
 }
