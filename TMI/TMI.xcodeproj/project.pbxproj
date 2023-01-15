@@ -30,6 +30,7 @@
 		EA9C5D2E29702D6B005D1910 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C5D2D29702D6B005D1910 /* HistoryStore.swift */; };
 		EA9C5D3029702E42005D1910 /* TerminalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C5D2F29702E42005D1910 /* TerminalBar.swift */; };
 		F4DC9CB229732B5E009C557A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB129732B5E009C557A /* WeatherView.swift */; };
+		F4DC9CB42973B7C5009C557A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB32973B7C5009C557A /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		EA9C5D2D29702D6B005D1910 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
 		EA9C5D2F29702E42005D1910 /* TerminalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalBar.swift; sourceTree = "<group>"; };
 		F4DC9CB129732B5E009C557A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		F4DC9CB32973B7C5009C557A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				EA9C5D2D29702D6B005D1910 /* HistoryStore.swift */,
+				F4DC9CB32973B7C5009C557A /* LocationManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBA21CA296D6D5C00BAA26E /* Memo.swift in Sources */,
+				F4DC9CB42973B7C5009C557A /* LocationManager.swift in Sources */,
 				ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */,
 				16E36CBF296DABCF00C1BB68 /* OnBoardingTab.swift in Sources */,
 				16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */,

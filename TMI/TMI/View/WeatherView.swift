@@ -12,6 +12,11 @@ struct WeatherView: View {
     @State var goBack: String = ""
     
     var body: some View {
+        
+        
+        
+        
+        
         TextField("", text: $goBack)
             .textFieldStyle(.roundedBorder)
             .onSubmit {
