@@ -1,5 +1,5 @@
 //
-//  WeatherView.swift
+//  WeatherTestView.swift
 //  TMI
 //
 //  Created by zooey on 2023/01/13.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct WeatherView: View {
+struct WeatherTestView: View {
     
-    @ObservedObject var weatherViewModel: WeatherViewModel
+    @ObservedObject var weatherViewModel: WeatherViewModel = WeatherViewModel(weatherService: WeatherService())
     
     var body: some View {
         
@@ -27,6 +27,6 @@ struct WeatherView: View {
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView(weatherViewModel: WeatherViewModel(weatherService: WeatherService()))
+        WeatherTestView(weatherViewModel: WeatherViewModel(weatherService: WeatherService()))
     }
 }

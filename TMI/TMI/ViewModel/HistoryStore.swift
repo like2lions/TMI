@@ -9,6 +9,7 @@ import Foundation
 
 class HistoryStore: ObservableObject {
     @Published var histories: [History] = []
+    @Published var showingMemoView: Bool = false
     
     func checkCmd(cmd: String) {
         switch cmd {
@@ -16,6 +17,8 @@ class HistoryStore: ObservableObject {
             histories = []
         case "ls":
             histories.append(History(command: cmd, result: "result"))
+        case "memo":
+            showingMemoView.toggle()
         default:
             histories.append(History(command: cmd, result: "command not found: \(cmd)"))
         }

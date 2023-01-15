@@ -54,17 +54,22 @@ struct HomeView: View {
                                 Button("cd") {
                                     cmd = "cd"
                                 }
+                                Button("memo") {
+                                    cmd = "memo"
+                                }
+                                .fullScreenCover(isPresented: $historyStore.showingMemoView) {
+                                    DetailView()
+                                }
                             }
                         }
                         .onSubmit {
                             historyStore.checkCmd(cmd: cmd)
                             focusField = .cmdLine
                             cmd = ""
+                            
                         }
                         .frame(maxWidth: .infinity)
-                    
                 }
-                
                 Spacer()
             }
         }
