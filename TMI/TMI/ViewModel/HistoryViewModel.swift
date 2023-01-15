@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HistoryStore: ObservableObject {
+class HistoryViewModel: ObservableObject {
     @Published var histories: [History] = []
     
     func checkCmd(cmd: String) {

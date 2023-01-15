@@ -12,7 +12,7 @@ enum Field: Hashable {
 }
 
 struct HomeView: View {
-    @ObservedObject var historyStore: HistoryStore = HistoryStore()
+    @ObservedObject var historyStore: HistoryViewModel = HistoryViewModel()
     @State var cmd: String = ""
     @FocusState var focusField: Field?
     
