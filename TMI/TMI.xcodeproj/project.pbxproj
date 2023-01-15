@@ -33,6 +33,7 @@
 		F4DC9CB42973B7C5009C557A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB32973B7C5009C557A /* LocationManager.swift */; };
 		F4DC9CB62973BAFE009C557A /* GetWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB52973BAFE009C557A /* GetWeatherAPI.swift */; };
 		F4DC9CB82973BC07009C557A /* FetchWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB72973BC07009C557A /* FetchWeather.swift */; };
+		F4DC9CBA2973CB9B009C557A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB92973CB9B009C557A /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		F4DC9CB32973B7C5009C557A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F4DC9CB52973BAFE009C557A /* GetWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherAPI.swift; sourceTree = "<group>"; };
 		F4DC9CB72973BC07009C557A /* FetchWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWeather.swift; sourceTree = "<group>"; };
+		F4DC9CB92973CB9B009C557A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				ADBA21C9296D6D5C00BAA26E /* Memo.swift */,
 				EA9C5D2929702D2E005D1910 /* History.swift */,
+				F4DC9CB92973CB9B009C557A /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				F4DC9CB42973B7C5009C557A /* LocationManager.swift in Sources */,
 				ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */,
 				16E36CBF296DABCF00C1BB68 /* OnBoardingTab.swift in Sources */,
+				F4DC9CBA2973CB9B009C557A /* Weather.swift in Sources */,
 				16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */,
 				16E36CB7296DABCF00C1BB68 /* Third.swift in Sources */,
 				16E36CBD296DABCF00C1BB68 /* LottieManager.swift in Sources */,

@@ -11,7 +11,6 @@ import CoreLocation
 let key = "0d268b100aab2067be1aeebe6b626058"
 let weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=\(key)"
 
-
 extension URL {
     //도시 이름을 통해 날씨 정보를 가져오는  GET Rest API
    static func urlWith(city: String) -> URL? {
