@@ -7,39 +7,55 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
-    private let manager = CLLocationManager()
-    var completionHandler: ((CLLocationCoordinate2D) -> (Void))?
+class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
-    override init() {
-        super.init()
-        manager.delegate = self
-        //manager.desiredAccuracy = kCLLocationAccuracyBest
-        //위치 정보 승인 요청
-        manager.requestWhenInUseAuthorization()
+    @Published var location: CLLocation? = nil
+    
+    //폰에서 위치허용 꺼놓으면 없을수도 있으므로 optional
+    var locationManager: CLLocationManager?
+    
+    func checkIfLocationServiceIsEnabled() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager!.delegate = self
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager?.distanceFilter = kCLDistanceFilterNone
+            locationManager?.startUpdatingLocation()
+        } else {
+            print("위치 정보 비활용 상태입니다")
+        }
     }
     
-    //위치 정보 요청 - 정보 요청이 성공하면 실행될 completionHandler를 등록
-    func requestLocation(completion: @escaping ((CLLocationCoordinate2D) -> (Void))) {
-        completionHandler = completion
-        manager.requestLocation()
+    private func checkLocationAuthorization() {
+        guard let locationManager = locationManager else { return }
+        
+        switch locationManager.authorizationStatus {
+            
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            print("위치 정보 사용 제한됨")
+        case .denied:
+            print("위치 정보 비활용상태")
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
+        @unknown default:
+            break
+        }
     }
     
-    //위치 정보가 업데이트 될 때 호출되는 delegate 함수
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
+    }
+}
+
+extension LocationManager {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {
             return
         }
-        //requestLocation 에서 등록한 completion handler를 통해 위치 정보를 전달
-        if let completion = self.completionHandler {
-            completion(location.coordinate)
-        }
-//        //위치 정보 업데이트 중단
-//        manager.stopUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
+        self.location = location
     }
 }

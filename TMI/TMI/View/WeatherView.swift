@@ -6,24 +6,30 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct WeatherView: View {
     @Binding var showWeather: Bool
     @State var goBack: String = ""
+    @ObservedObject var locationManager = LocationManager()
     
     var body: some View {
         
+        let coordinate = self.locationManager.location != nil ? self.locationManager.location!.coordinate : CLLocationCoordinate2D()
         
-        
-        
-        
-        TextField("", text: $goBack)
-            .textFieldStyle(.roundedBorder)
-            .onSubmit {
-                if goBack == ":wq" {
-                    showWeather.toggle()
+        VStack {
+            TextField("", text: $goBack)
+                .textFieldStyle(.roundedBorder)
+                .onSubmit {
+                    if goBack == ":wq" {
+                        showWeather.toggle()
+                    }
                 }
-            }
+            Text("\(coordinate.latitude), \(coordinate.longitude)")
+        }
+        .onAppear {
+            locationManager.checkIfLocationServiceIsEnabled()
+        }
     }
 }
 
