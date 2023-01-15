@@ -15,9 +15,19 @@ struct TerminalBar: View {
     let secondColor: Color = .yellow
     let fontColor: Color = .white
     
+    @ObservedObject var weatherViewModel: WeatherViewModel
+    
     var body: some View {
         VStack {
             HStack(spacing: 0) {
+                Image(systemName: weatherViewModel.weatherIcon)
+                    .foregroundColor(fontColor)
+                    .frame(height: 30)
+                    .padding(.leading, 5)
+                    .background {
+                        Rectangle()
+                            .foregroundColor(firstColor)
+                    }
                 Text("\(user)")
                     .bold()
                     .padding(.horizontal, 10)
@@ -42,6 +52,12 @@ struct TerminalBar: View {
                     .frame(width: 20, height: 30)
             }
         }
+    }
+}
+
+struct TerminalBar_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
     }
 }
 
