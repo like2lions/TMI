@@ -31,7 +31,7 @@
 		EA9C5D3029702E42005D1910 /* TerminalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C5D2F29702E42005D1910 /* TerminalBar.swift */; };
 		F4DC9CB229732B5E009C557A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB129732B5E009C557A /* WeatherView.swift */; };
 		F4DC9CB42973B7C5009C557A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB32973B7C5009C557A /* LocationManager.swift */; };
-		F4DC9CB62973BAFE009C557A /* GetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB52973BAFE009C557A /* GetAPI.swift */; };
+		F4DC9CB62973BAFE009C557A /* GetWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB52973BAFE009C557A /* GetWeatherAPI.swift */; };
 		F4DC9CB82973BC07009C557A /* FetchWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB72973BC07009C557A /* FetchWeather.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,7 @@
 		EA9C5D2F29702E42005D1910 /* TerminalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalBar.swift; sourceTree = "<group>"; };
 		F4DC9CB129732B5E009C557A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		F4DC9CB32973B7C5009C557A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		F4DC9CB52973BAFE009C557A /* GetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAPI.swift; sourceTree = "<group>"; };
+		F4DC9CB52973BAFE009C557A /* GetWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherAPI.swift; sourceTree = "<group>"; };
 		F4DC9CB72973BC07009C557A /* FetchWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +176,7 @@
 			children = (
 				EA9C5D2D29702D6B005D1910 /* HistoryStore.swift */,
 				F4DC9CB32973B7C5009C557A /* LocationManager.swift */,
-				F4DC9CB52973BAFE009C557A /* GetAPI.swift */,
+				F4DC9CB52973BAFE009C557A /* GetWeatherAPI.swift */,
 				F4DC9CB72973BC07009C557A /* FetchWeather.swift */,
 			);
 			path = ViewModel;
@@ -271,7 +271,7 @@
 				16E36CBD296DABCF00C1BB68 /* LottieManager.swift in Sources */,
 				EA9C5D2E29702D6B005D1910 /* HistoryStore.swift in Sources */,
 				F4DC9CB229732B5E009C557A /* WeatherView.swift in Sources */,
-				F4DC9CB62973BAFE009C557A /* GetAPI.swift in Sources */,
+				F4DC9CB62973BAFE009C557A /* GetWeatherAPI.swift in Sources */,
 				F4DC9CB82973BC07009C557A /* FetchWeather.swift in Sources */,
 				63D1135E296D8B37002D922D /* DetailView.swift in Sources */,
 				16E36CB5296DABCF00C1BB68 /* Second.swift in Sources */,
