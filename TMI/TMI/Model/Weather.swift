@@ -24,6 +24,7 @@ struct Welcome: Codable, Hashable {
     let cod: Int
 }
 
+
 // MARK: - Clouds
 struct Clouds: Codable, Hashable  {
     let all: Int

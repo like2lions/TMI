@@ -33,6 +33,7 @@
 		F4DC9CB42973B7C5009C557A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB32973B7C5009C557A /* LocationManager.swift */; };
 		F4DC9CB62973BAFE009C557A /* GetWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB52973BAFE009C557A /* GetWeatherAPI.swift */; };
 		F4DC9CBA2973CB9B009C557A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC9CB92973CB9B009C557A /* Weather.swift */; };
+		F4DC9CC12973D886009C557A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F4DC9CC02973D886009C557A /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E36CC2296DACCA00C1BB68 /* Lottie in Frameworks */,
+				F4DC9CC12973D886009C557A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +202,7 @@
 			name = TMI;
 			packageProductDependencies = (
 				16E36CC1296DACCA00C1BB68 /* Lottie */,
+				F4DC9CC02973D886009C557A /* Alamofire */,
 			);
 			productName = TMI;
 			productReference = 16E36C91296D5E5B00C1BB68 /* TMI.app */;
@@ -231,6 +234,7 @@
 			mainGroup = 16E36C88296D5E5B00C1BB68;
 			packageReferences = (
 				16E36CC0296DACCA00C1BB68 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				F4DC9CBF2973D886009C557A /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 16E36C92296D5E5B00C1BB68 /* Products */;
 			projectDirPath = "";
@@ -502,6 +506,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		F4DC9CBF2973D886009C557A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -509,6 +521,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 16E36CC0296DACCA00C1BB68 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		F4DC9CC02973D886009C557A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4DC9CBF2973D886009C557A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
