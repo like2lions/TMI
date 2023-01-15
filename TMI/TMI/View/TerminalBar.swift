@@ -15,7 +15,7 @@ struct TerminalBar: View {
     let secondColor: Color = .yellow
     let fontColor: Color = .white
     
-    @ObservedObject var weatherViewModel: WeatherViewModel = WeatherViewModel(weatherService: WeatherService())
+    @ObservedObject var weatherViewModel: WeatherViewModel
     
     var body: some View {
         VStack {
@@ -51,9 +51,6 @@ struct TerminalBar: View {
                     .foregroundColor(secondColor)
                     .frame(width: 20, height: 30)
             }
-        }
-        .onAppear {
-            weatherViewModel.refresh()
         }
     }
 }

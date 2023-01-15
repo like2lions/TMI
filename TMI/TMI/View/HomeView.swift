@@ -18,17 +18,20 @@ struct HomeView: View {
     @State var cmd: String = ""
     @FocusState var focusField: Field?
     
+    @ObservedObject var weatherViewModel: WeatherViewModel = WeatherViewModel()
+    
     var user = "Chap"
     var path = "~"
     
     var body: some View {
         
         VStack {
+            WeatherTestView(weatherViewModel: weatherViewModel)
             ScrollView {
                 ForEach(historyStore.histories) { history in
                     VStack(alignment: .leading) {
                         HStack {
-                            TerminalBar(user: user, path: path)
+                            TerminalBar(user: user, path: path, weatherViewModel: weatherViewModel)
                             Text(history.command)
                         }
                         Text(history.result)
@@ -38,7 +41,7 @@ struct HomeView: View {
                 }
                 
                 HStack {
-                    TerminalBar(user: user, path: path)
+                    TerminalBar(user: user, path: path, weatherViewModel: weatherViewModel)
                     TextField("", text: $cmd)
                         .accentColor(.yellow) // 커서 색상 변경
                         .textInputAutocapitalization(.never) // 첫 글자 대문자 비활성화
@@ -67,7 +70,8 @@ struct HomeView: View {
                             historyStore.checkCmd(cmd: cmd)
                             focusField = .cmdLine
                             cmd = ""
-                            
+                            weatherViewModel.getWeatherForecast()
+                            weatherViewModel.location = ""
                         }
                         .frame(maxWidth: .infinity)
                 }

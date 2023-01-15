@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeatherTestView: View {
     
-    @ObservedObject var weatherViewModel: WeatherViewModel = WeatherViewModel(weatherService: WeatherService())
+    @ObservedObject var weatherViewModel: WeatherViewModel
     
     var body: some View {
         
@@ -19,14 +19,11 @@ struct WeatherTestView: View {
             Image(systemName: weatherViewModel.weatherIcon)
             Text(weatherViewModel.weatherDescription)
         }
-        .onAppear {
-            weatherViewModel.refresh()
-        }
     }
 }
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherTestView(weatherViewModel: WeatherViewModel(weatherService: WeatherService()))
+        WeatherTestView(weatherViewModel: WeatherViewModel())
     }
 }

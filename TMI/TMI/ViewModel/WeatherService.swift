@@ -9,44 +9,40 @@ import Foundation
 import CoreLocation
 import Combine
 
-public final class WeatherService: NSObject {
+public final class WeatherService {
     
-    private let locationManager = CLLocationManager()
-    private let API_KEY = "7abc782c5f925882bf8b79a106ecf88e"
-    private var compltionHandler: ((Weather) -> Void)?
-    
-    override init() {
-        super.init()
-        locationManager.delegate = self
+    public static let shared = WeatherService()
+    var cancellable = Set<AnyCancellable>()
+    enum APIError: Error {
+        case error(_ errorString: String)
     }
     
-    func loadWeatherData(_ completionHandler: @escaping((Weather) -> Void)) {
-        self.compltionHandler = completionHandler
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    private func makeDataRequest(forCoordinates coordinates: CLLocationCoordinate2D) {
-        guard let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(API_KEY)&units=metric&lang=kr".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard error == nil, let data = data else { return }
-            if let response = try? JSONDecoder().decode(APIResponse.self, from: data) {
-                self.compltionHandler?(Weather(response: response))
-            }
+    func getJson<T: Decodable>(urlString: String,
+                               dateDecodingStarategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
+                               keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
+                               completion: @escaping (Result<T, APIError>) -> Void) {
+        guard let url = URL(string: urlString) else {
+            completion(.failure(.error(NSLocalizedString("Error: Invalid URL", comment: ""))))
+            return
         }
-        .resume()
-    }
-}
-
-extension WeatherService: CLLocationManagerDelegate {
-    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
-        makeDataRequest(forCoordinates: location.coordinate)
-    }
-    
-    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("위치정보 받아오기 실패: \(error.localizedDescription)")
+        let request = URLRequest(url: url)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = dateDecodingStarategy
+        decoder.keyDecodingStrategy = keyDecodingStrategy
+        URLSession.shared.dataTaskPublisher(for: request)
+            .map { $0.data }
+            .decode(type: T.self, decoder: decoder)
+            .receive(on: RunLoop.main)
+            .sink { taskCompletion in
+                switch taskCompletion {
+                case .finished:
+                    return
+                case .failure(let decodingError):
+                    completion(.failure(APIError.error("Erro: \(decodingError.localizedDescription)")))
+                }
+            } receiveValue: { decodeData in
+                completion(.success(decodeData))
+            }
+            .store(in: &cancellable)
     }
 }

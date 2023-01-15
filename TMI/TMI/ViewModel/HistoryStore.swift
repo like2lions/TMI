@@ -28,3 +28,5 @@ class HistoryStore: ObservableObject {
         }
     }
 }
+
+
