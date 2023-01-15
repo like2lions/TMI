@@ -11,6 +11,10 @@ class HistoryStore: ObservableObject {
     @Published var histories: [History] = []
     @Published var showingMemoView: Bool = false
     
+    // PDF 만들기 버튼
+    @Published var PDFUrl: URL?
+    @Published var showShareSheet: Bool = false
+    
     func checkCmd(cmd: String) {
         switch cmd {
         case "clear":

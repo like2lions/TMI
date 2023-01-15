@@ -23,6 +23,7 @@
 		16E36CBE296DABCF00C1BB68 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CB2296DABCF00C1BB68 /* OnBoardingView.swift */; };
 		16E36CBF296DABCF00C1BB68 /* OnBoardingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36CB3296DABCF00C1BB68 /* OnBoardingTab.swift */; };
 		16E36CC2296DACCA00C1BB68 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 16E36CC1296DACCA00C1BB68 /* Lottie */; };
+		637753572973C80800582F9F /* PDFRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637753562973C80800582F9F /* PDFRenderer.swift */; };
 		6378C71229713C87009043EB /* WeatherTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378C71129713C87009043EB /* WeatherTestView.swift */; };
 		63BC522229713EA5009274DD /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC522129713EA5009274DD /* WeatherService.swift */; };
 		63BC522429714165009274DD /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC522329714165009274DD /* APIResponse.swift */; };
@@ -56,6 +57,7 @@
 		16E36CB1296DABCF00C1BB68 /* LottieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieManager.swift; sourceTree = "<group>"; };
 		16E36CB2296DABCF00C1BB68 /* OnBoardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		16E36CB3296DABCF00C1BB68 /* OnBoardingTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingTab.swift; sourceTree = "<group>"; };
+		637753562973C80800582F9F /* PDFRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRenderer.swift; sourceTree = "<group>"; };
 		6378C71129713C87009043EB /* WeatherTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTestView.swift; sourceTree = "<group>"; };
 		63BC522129713EA5009274DD /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		63BC522329714165009274DD /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				EA9C5D2D29702D6B005D1910 /* HistoryStore.swift */,
 				63BC522129713EA5009274DD /* WeatherService.swift */,
 				63BC522B297148CA009274DD /* WeatherViewModel.swift */,
+				637753562973C80800582F9F /* PDFRenderer.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				EA9C5D2A29702D2E005D1910 /* History.swift in Sources */,
 				63BC522229713EA5009274DD /* WeatherService.swift in Sources */,
 				16E36C95296D5E5B00C1BB68 /* TMIApp.swift in Sources */,
+				637753572973C80800582F9F /* PDFRenderer.swift in Sources */,
 				16E36CB8296DABCF00C1BB68 /* Last.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +427,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TMI/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "이 앱은 사용자의 위치를 사용합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -461,6 +466,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TMI/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "이 앱은 사용자의 위치를 사용합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

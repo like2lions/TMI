@@ -12,46 +12,94 @@ struct DetailView: View {
     @State private var lineNumber: Int = 1
     @State private var text: String = ""
     @State var textArray: [String] = []
+    @FocusState var focusField: Field?
+    @ObservedObject var historyStore: HistoryStore
     
     var body: some View {
         
-        VStack(spacing: 0) {
-                ForEach(Array(textArray.enumerated()), id: \.offset) { index, text in
+        VStack {
+            ScrollView {
+                VStack(spacing: 0) {
+                    ForEach(Array(textArray.enumerated()), id: \.offset) { index, text in
+                        HStack {
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: 30, height: 30)
+                                Text("\(index + 1)")
+                                    .foregroundColor(.white)
+                            }
+                            
+                            Text(text)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    
                     HStack {
                         ZStack {
                             Rectangle()
                                 .frame(width: 30, height: 30)
-                            Text("\(index + 1)")
+                            Text("\(lineNumber)")
                                 .foregroundColor(.white)
                         }
                         
-                        Text(text)
+                        TextField("내용을 입력하세요", text: $text)
+                            .focused($focusField, equals: .detailText)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer()
                 }
-              
-            HStack {
-                ZStack {
-                    Rectangle()
-                        .frame(width: 30, height: 30)
-                    Text("\(lineNumber)")
-                        .foregroundColor(.white)
-                }
-                
-                TextField("내용을 입력하세요", text: $text)
             }
-            Spacer()
+            .onSubmit {
+                textArray.append(text)
+                lineNumber += 1
+                text = ""
+                focusField = .detailText
+            }
+            
+            HStack {
+                Spacer()
+                Button {
+                    exportPDF {
+                        self
+                    } completion: { status, url in
+                        if let url = url, status {
+                            historyStore.PDFUrl = url
+                            historyStore.showShareSheet.toggle()
+                        } else {
+                            print("Failed to produce PDF")
+                        }
+                    }
+                    
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .padding()
+                }
+            }
         }
-        .onSubmit {
-            textArray.append(text)
-            lineNumber += 1
-            text = ""
+        .sheet(isPresented: $historyStore.showShareSheet) {
+            historyStore.PDFUrl = nil
+        } content: {
+            if let PDFUrl = historyStore.PDFUrl {
+                ShareSheet(urls: [PDFUrl])
+            }
         }
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(historyStore: HistoryStore())
+    }
+}
+
+struct ShareSheet: UIViewControllerRepresentable {
+    var urls: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let controller = UIActivityViewController(activityItems: urls, applicationActivities: nil)
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
+        
     }
 }

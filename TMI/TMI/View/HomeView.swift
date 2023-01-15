@@ -9,6 +9,7 @@ import SwiftUI
 
 enum Field: Hashable {
     case cmdLine
+    case detailText
 }
 
 struct HomeView: View {
@@ -58,7 +59,7 @@ struct HomeView: View {
                                     cmd = "memo"
                                 }
                                 .fullScreenCover(isPresented: $historyStore.showingMemoView) {
-                                    DetailView()
+                                    DetailView(historyStore: historyStore)
                                 }
                             }
                         }
