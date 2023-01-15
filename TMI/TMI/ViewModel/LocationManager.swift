@@ -38,4 +38,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
 //        //위치 정보 업데이트 중단
 //        manager.stopUpdatingLocation()
     }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }
