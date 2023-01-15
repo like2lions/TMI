@@ -59,3 +59,5 @@ extension LocationManager {
         self.location = location
     }
 }
+//위치 좌표값 불럭왹
+
