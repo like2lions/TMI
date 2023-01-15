@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct WeatherView: View {
+    @Binding var showWeather: Bool
+    @State var goBack: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TextField("", text: $goBack)
+            .textFieldStyle(.roundedBorder)
+            .onSubmit {
+                if goBack == ":wq" {
+                    showWeather.toggle()
+                }
+            }
     }
 }
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView()
+        WeatherView(showWeather: .constant(false))
     }
 }

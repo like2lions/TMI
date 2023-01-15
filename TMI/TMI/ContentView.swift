@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var historyStore: HistoryStore = HistoryStore()
+    @State var showWeather: Bool = false
+    
     var body: some View {
         VStack {
-           HomeView()
+            HomeView(showWeather: $showWeather)
+        }
+        .fullScreenCover(isPresented: $showWeather) {
+            WeatherView(showWeather: $showWeather)
         }
     }
 }

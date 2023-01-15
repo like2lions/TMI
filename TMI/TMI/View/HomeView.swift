@@ -12,9 +12,11 @@ enum Field: Hashable {
 }
 
 struct HomeView: View {
-    @ObservedObject var historyStore: HistoryStore = HistoryStore()
+    @StateObject var historyStore: HistoryStore = HistoryStore()
     @State var cmd: String = ""
     @FocusState var focusField: Field?
+    
+    @Binding var showWeather: Bool
     
     var user = "Chap"
     var path = "~"
@@ -55,6 +57,11 @@ struct HomeView: View {
                     }
                     .onSubmit {
                         historyStore.checkCmd(cmd: cmd)
+                        
+                        if cmd == "weather" {
+                            showWeather.toggle()
+                        }
+                        
                         focusField = .cmdLine
                         cmd = ""
                     }
@@ -71,7 +78,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(showWeather: .constant(false))
     }
 }
 

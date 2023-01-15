@@ -16,6 +16,8 @@ class HistoryStore: ObservableObject {
             histories = []
         case "ls":
             histories.append(History(command: cmd, result: "result"))
+        case "weather":
+            histories.append(History(command: cmd, result: "weather"))
         default:
             histories.append(History(command: cmd, result: "command not found: \(cmd)"))
         }
