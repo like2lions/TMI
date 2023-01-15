@@ -27,6 +27,7 @@
 		ADBA21CA296D6D5C00BAA26E /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA21C9296D6D5C00BAA26E /* Memo.swift */; };
 		ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA21CC296D70D400BAA26E /* HomeView.swift */; };
 		EA8FAC372973E29700AA6E26 /* WeatherStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FAC362973E29700AA6E26 /* WeatherStore.swift */; };
+		EA8FAC392973F3DE00AA6E26 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FAC382973F3DE00AA6E26 /* Weather.swift */; };
 		EA9C5D2A29702D2E005D1910 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C5D2929702D2E005D1910 /* History.swift */; };
 		EA9C5D2E29702D6B005D1910 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C5D2D29702D6B005D1910 /* HistoryViewModel.swift */; };
 		EA9C5D3029702E42005D1910 /* TerminalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C5D2F29702E42005D1910 /* TerminalBar.swift */; };
@@ -54,6 +55,7 @@
 		ADBA21C9296D6D5C00BAA26E /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		ADBA21CC296D70D400BAA26E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EA8FAC362973E29700AA6E26 /* WeatherStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStore.swift; sourceTree = "<group>"; };
+		EA8FAC382973F3DE00AA6E26 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		EA9C5D2929702D2E005D1910 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		EA9C5D2D29702D6B005D1910 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		EA9C5D2F29702E42005D1910 /* TerminalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalBar.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				ADBA21C9296D6D5C00BAA26E /* Memo.swift */,
+				EA8FAC382973F3DE00AA6E26 /* Weather.swift */,
 				EA9C5D2929702D2E005D1910 /* History.swift */,
 			);
 			path = Model;
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBA21CA296D6D5C00BAA26E /* Memo.swift in Sources */,
+				EA8FAC392973F3DE00AA6E26 /* Weather.swift in Sources */,
 				ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */,
 				16E36CBF296DABCF00C1BB68 /* OnBoardingTab.swift in Sources */,
 				16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */,
