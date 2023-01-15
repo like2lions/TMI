@@ -19,43 +19,55 @@ private let iconMap = [
     "Clouds": "smoke"
 ]
 
-class WeatherViewModel: ObservableObject {
+class WeatherViewModel: NSObject, ObservableObject {
     
     @Published var cityName: String = "City Name"
     @Published var temperature: String = "--"
     @Published var weatherDescription: String = "--"
     @Published var weatherIcon: String = defaultIcon
     
-    @Published var forecast: [Forecast] = []
+    public let locationManager = CLLocationManager()
+    private var compltionHandler: ((Forecast) -> Void)?
     
-    @Published var location: String = ""
+    override init() {
+        super.init()
+        locationManager.delegate = self
+    }
     
-    func getWeatherForecast() {
+    func loadWeatherData(_ completionHandler: @escaping((Forecast) -> Void)) {
+        self.compltionHandler = completionHandler
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func getWeatherForecast(forCoordinates coordinates: CLLocationCoordinate2D) {
         let apiService = WeatherService.shared
-        CLGeocoder().geocodeAddressString(location) { placemarks, error in
-            if let error = error as? CLError {
-                print(error.localizedDescription)
-            }
-            if let lat = placemarks?.first?.location?.coordinate.latitude,
-               let lon = placemarks?.first?.location?.coordinate.longitude {
-                apiService.getJson(urlString: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=7abc782c5f925882bf8b79a106ecf88e&units=metric&lang=kr", dateDecodingStarategy: .secondsSince1970) { (result: Result<Forecast, WeatherService.APIError>) in
-                    switch result {
-                    case .success(let forecast):
-                        DispatchQueue.main.async {
-                            self.cityName = forecast.name
-                            self.weatherIcon = forecast.weather[0].icon
-                            self.temperature = "\(forecast.main.temp)°"
-                            self.weatherDescription = forecast.weather[0].description
-//                            self.forecast.append(forecast)
-                        }
-                    case .failure(let apiError):
-                        switch apiError {
-                        case .error(let errorString):
-                            print(errorString)
-                        }
-                    }
+        apiService.getJson(urlString: "https://api.openweathermap.org/data/2.5/weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=7abc782c5f925882bf8b79a106ecf88e&units=metric") { (result: Result<Forecast, WeatherService.APIError>) in
+            switch result {
+            case .success(let forecast):
+                DispatchQueue.main.async {
+                    self.cityName = forecast.name
+                    self.weatherIcon = forecast.weather[0].icon
+                    self.temperature = "\(forecast.main.temp)°"
+                    self.weatherDescription = forecast.weather[0].main
+                }
+            case .failure(let apiError):
+                switch apiError {
+                case .error(let errorString):
+                    print(errorString)
                 }
             }
         }
+    }
+}
+
+extension WeatherViewModel: CLLocationManagerDelegate {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        getWeatherForecast(forCoordinates: location.coordinate)
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("위치정보 받아오기 실패: \(error.localizedDescription)")
     }
 }

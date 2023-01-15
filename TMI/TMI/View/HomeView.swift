@@ -70,12 +70,15 @@ struct HomeView: View {
                             historyStore.checkCmd(cmd: cmd)
                             focusField = .cmdLine
                             cmd = ""
-                            weatherViewModel.getWeatherForecast()
-                            weatherViewModel.location = ""
                         }
                         .frame(maxWidth: .infinity)
                 }
                 Spacer()
+            }
+        }
+        .onAppear {
+            weatherViewModel.loadWeatherData { Forecast in
+                
             }
         }
     }
