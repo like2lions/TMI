@@ -67,7 +67,9 @@ struct HomeView: View {
                             }
                         }
                         .onSubmit {
-                            historyStore.checkCmd(cmd: cmd)
+                            if !historyStore.showingMemoView {
+                                historyStore.checkCmd(cmd: cmd)
+                            } 
                             focusField = .cmdLine
                             cmd = ""
                         }

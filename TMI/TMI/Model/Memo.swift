@@ -13,6 +13,7 @@ struct Memo: Identifiable {
     var id: String
     var title: String
     var content: [String]
+    var lines: Int
     var date: Date
     var createdDate: String {
         let dateFormatter = DateFormatter()

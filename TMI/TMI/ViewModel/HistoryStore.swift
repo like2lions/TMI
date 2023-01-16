@@ -11,6 +11,7 @@ class HistoryStore: ObservableObject {
     @Published var histories: [History] = []
     @Published var memos: [Memo] = []
     @Published var showingMemoView: Bool = false
+    @Published var backUp: [String] = []
     
     // PDF 만들기 버튼
     @Published var PDFUrl: URL?
@@ -24,7 +25,7 @@ class HistoryStore: ObservableObject {
             histories.append(History(command: cmd, result: "result"))
         case "memo":
             if memos.isEmpty {
-                memos.append(Memo(id: UUID().uuidString, title: "", content: [], date: Date()))
+                memos.append(Memo(id: UUID().uuidString, title: "", content: [], lines: 1, date: Date()))
             }
             showingMemoView.toggle()
         default:
@@ -39,10 +40,9 @@ class HistoryStore: ObservableObject {
             showingMemoView.toggle()
         case ":q":
             showingMemoView.toggle()
-            memos[0].content = []
+            memos[0].content = contents
         default:
             memos[0].content = contents
-            
         }
     }
 }

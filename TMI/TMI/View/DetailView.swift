@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @State private var lineNumber: Int = 1
+    //@State private var lineNumber: Int = 1
     @State private var text: String = ""
     @State var textArray: [String] = []
     @FocusState var focusField: Field?
@@ -38,7 +38,7 @@ struct DetailView: View {
                         ZStack {
                             Rectangle()
                                 .frame(width: 30, height: 30)
-                            Text("\(lineNumber)")
+                            Text("\(historyStore.memos[0].lines)")
                                 .foregroundColor(.white)
                         }
                         
@@ -52,10 +52,11 @@ struct DetailView: View {
                 textArray.append(text)
                 
                 let newMemo = updateMemo(before: historyStore.memos[0].content, new: textArray)
-                print(newMemo)
+                
+                historyStore.memos[0].lines += 1
                 historyStore.checkQuit(cmd: text, contents: newMemo)
                 
-                lineNumber += 1
+                print(historyStore.memos[0].lines)
                 text = ""
                 focusField = .detailText
                 textArray = []
@@ -90,6 +91,7 @@ struct DetailView: View {
         }
     }
     
+    
     func updateMemo(before: [String], new: [String]) -> [String] {
         var newMemo: [String] = []
         var tmp: [String] = []
@@ -99,7 +101,13 @@ struct DetailView: View {
         if new.last == ":wq" {
             tmp = new
             tmp.removeLast()
+            historyStore.memos[0].lines -= 1
             newMemo += tmp
+        } else if new.last == ":q" {
+            tmp = new
+            tmp.removeLast()
+            historyStore.memos[0].lines -= 1
+            return newMemo
         } else {
             newMemo += new
         }
