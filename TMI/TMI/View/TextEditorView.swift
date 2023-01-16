@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TextEditorView: View {
     @Binding var text: String
-    @State var textEditorHeight : CGFloat = 20
+    @Binding var textEditorHeight: CGFloat // TextEditor의 높이를 구하기 위해 사용하는 변수
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -17,15 +17,18 @@ struct TextEditorView: View {
                 .font(.system(.body))
                 .foregroundColor(.clear)
                 .padding(8)
-                .background(GeometryReader {
+                .background(GeometryReader { proxy in
                     Color.clear.preference(key: ViewHeightKey.self,
-                                           value: $0.frame(in: .local).size.height)
+                                           value: proxy.size.height)
                 })
             TextEditor(text: $text)
                 .font(.system(.body))
                 .frame(height: max(40,textEditorHeight))
                 .cornerRadius(10.0)
-        }.onPreferenceChange(ViewHeightKey.self) { textEditorHeight = $0 }
+        }
+        .onPreferenceChange(ViewHeightKey.self) { newValue in
+            textEditorHeight = newValue
+        }
     }
 }
 
@@ -38,6 +41,6 @@ struct ViewHeightKey: PreferenceKey {
 
 struct TextEditorView_Previews: PreviewProvider {
     static var previews: some View {
-        TextEditorView(text: .constant(""))
+        TextEditorView(text: .constant(""), textEditorHeight: .constant(0))
     }
 }

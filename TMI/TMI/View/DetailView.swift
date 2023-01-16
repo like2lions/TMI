@@ -12,49 +12,19 @@ struct DetailView: View {
     @State private var lineNumber: Int = 1
     @State private var text: String = ""
     @State var textArray: [String] = []
+    @State var textEditorHeight : CGFloat = 0 // TextEditor의 높이를 구하기 위해 사용하는 변수
     @FocusState var focusField: Field?
     @ObservedObject var historyStore: HistoryStore
     
     var body: some View {
         
         VStack {
-            ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(Array(textArray.enumerated()), id: \.offset) { index, text in
-                        HStack {
-                            ZStack {
-                                Rectangle()
-                                    .frame(width: 30, height: 30)
-                                Text("\(index + 1)")
-                                    .foregroundColor(.white)
-                            }
-                            
-                            Text(text)
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    
-                    HStack {
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 30, height: 30)
-                            Text("\(lineNumber)")
-                                .foregroundColor(.white)
-                        }
-                        
-                        TextField("내용을 입력하세요", text: $text)
-                            .focused($focusField, equals: .detailText)
-                    }
-                    Spacer()
-                }
+            HStack(spacing: 0) {
+                Rectangle()
+                    .frame(width: 30, height: textEditorHeight)
+                TextEditorView(text: $text, textEditorHeight: $textEditorHeight)
             }
-            .onSubmit {
-                textArray.append(text)
-                lineNumber += 1
-                text = ""
-                focusField = .detailText
-            }
-            
+            Spacer()
             HStack {
                 Spacer()
                 Button {
