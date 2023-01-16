@@ -20,7 +20,7 @@ struct DetailView: View {
         VStack {
             ScrollView {
                 VStack(spacing: 0) {
-                    ForEach(Array(textArray.enumerated()), id: \.offset) { index, text in
+                    ForEach(Array(historyStore.memos[0].content.enumerated()), id: \.offset) { index, text in
                         HStack {
                             ZStack {
                                 Rectangle()
@@ -28,7 +28,7 @@ struct DetailView: View {
                                 Text("\(index + 1)")
                                     .foregroundColor(.white)
                             }
-                            
+
                             Text(text)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -50,9 +50,15 @@ struct DetailView: View {
             }
             .onSubmit {
                 textArray.append(text)
+                
+                let newMemo = updateMemo(before: historyStore.memos[0].content, new: textArray)
+                print(newMemo)
+                historyStore.checkQuit(cmd: text, contents: newMemo)
+                
                 lineNumber += 1
                 text = ""
                 focusField = .detailText
+                textArray = []
             }
             
             HStack {
@@ -83,6 +89,16 @@ struct DetailView: View {
             }
         }
     }
+    
+    func updateMemo(before: [String], new: [String]) -> [String] {
+        var newMemo: [String] = []
+        
+        newMemo += before
+        newMemo += new
+        
+        return newMemo
+    }
+    
 }
 
 struct DetailView_Previews: PreviewProvider {
