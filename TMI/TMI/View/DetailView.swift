@@ -92,9 +92,17 @@ struct DetailView: View {
     
     func updateMemo(before: [String], new: [String]) -> [String] {
         var newMemo: [String] = []
+        var tmp: [String] = []
         
         newMemo += before
-        newMemo += new
+        
+        if new.last == ":wq" {
+            tmp = new
+            tmp.removeLast()
+            newMemo += tmp
+        } else {
+            newMemo += new
+        }
         
         return newMemo
     }
