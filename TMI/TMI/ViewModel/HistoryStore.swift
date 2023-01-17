@@ -27,6 +27,7 @@ class HistoryStore: ObservableObject {
             if memos.isEmpty {
                 memos.append(Memo(id: UUID().uuidString, title: "", content: [], lines: 0, date: Date()))
             }
+            histories.append(History(command: cmd, result: "open memo"))
             showingMemoView.toggle()
         default:
             histories.append(History(command: cmd, result: "command not found: \(cmd)"))
