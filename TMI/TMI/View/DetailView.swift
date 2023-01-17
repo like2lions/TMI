@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    
-    //@State private var lineNumber: Int = 1
+
     @State private var text: String = ""
     @State var textArray: [String] = []
     @FocusState var focusField: Field?
@@ -34,11 +33,28 @@ struct DetailView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     
+                    //새로이 입력되는 것들이 출력되는 공간
+                    ForEach(Array(textArray.enumerated()), id: \.offset) { index, text in
+                        HStack {
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: 30, height: 30)
+                                Text("\(index + 1 + historyStore.memos[0].lines)")
+                                    .foregroundColor(.white)
+                            }
+
+                            Text(text)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    
+                    
+                    // 텍스트필드 입력 공간
                     HStack {
                         ZStack {
                             Rectangle()
                                 .frame(width: 30, height: 30)
-                            Text("\(historyStore.memos[0].lines)")
+                            Text("\(historyStore.memos[0].lines + textArray.count + 1)")
                                 .foregroundColor(.white)
                         }
                         
@@ -53,13 +69,10 @@ struct DetailView: View {
                 
                 let newMemo = updateMemo(before: historyStore.memos[0].content, new: textArray)
                 
-                historyStore.memos[0].lines += 1
                 historyStore.checkQuit(cmd: text, contents: newMemo)
                 
-                print(historyStore.memos[0].lines)
                 text = ""
                 focusField = .detailText
-                textArray = []
             }
             
             HStack {
@@ -93,22 +106,28 @@ struct DetailView: View {
     
     
     func updateMemo(before: [String], new: [String]) -> [String] {
+        print(before)
+        print(new)
+        
         var newMemo: [String] = []
         var tmp: [String] = []
-        
-        newMemo += before
         
         if new.last == ":wq" {
             tmp = new
             tmp.removeLast()
-            historyStore.memos[0].lines -= 1
+            textArray = tmp
+            
+            historyStore.memos[0].lines += tmp.count
+            newMemo += before
             newMemo += tmp
-        } else if new.last == ":q" {
-            tmp = new
-            tmp.removeLast()
-            historyStore.memos[0].lines -= 1
-            return newMemo
-        } else {
+        }
+        else if new.last == ":q" {
+            textArray = []
+        
+            print(before)
+            return before
+        }
+        else {
             newMemo += new
         }
         

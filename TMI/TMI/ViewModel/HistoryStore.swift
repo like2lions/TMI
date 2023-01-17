@@ -25,7 +25,7 @@ class HistoryStore: ObservableObject {
             histories.append(History(command: cmd, result: "result"))
         case "memo":
             if memos.isEmpty {
-                memos.append(Memo(id: UUID().uuidString, title: "", content: [], lines: 1, date: Date()))
+                memos.append(Memo(id: UUID().uuidString, title: "", content: [], lines: 0, date: Date()))
             }
             showingMemoView.toggle()
         default:
@@ -39,12 +39,13 @@ class HistoryStore: ObservableObject {
             memos[0].content = contents
             showingMemoView.toggle()
         case ":q":
+            memos[0].content = contents
             showingMemoView.toggle()
-            memos[0].content = contents
         default:
-            memos[0].content = contents
+            return
         }
     }
+
 }
 
 
