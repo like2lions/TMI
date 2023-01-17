@@ -8,14 +8,14 @@
 import Foundation
 import SwiftUI
 
-class FileMangerService: ObservableObject {
+class FileManagerService: ObservableObject {
     
     @Published var fileData: String = ""
     @Published var fileList: [String] = []
     
     // FileManager 인스턴스 생성
     let fileManager: FileManager = FileManager.default
-    // 사용자의 문서 경로
+    // 문서 경로
     var documentPath: URL {
         fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
@@ -25,7 +25,7 @@ class FileMangerService: ObservableObject {
         do {
             // 폴더 위치
             let directoryPath: URL = documentPath.appendingPathComponent("\(foderName)")
-            // 아까 만든 디렉토리 경로에 디렉토리 생성 (폴더가 만들어진다.)
+            // 폴더 생성
             try fileManager.createDirectory(at: directoryPath, withIntermediateDirectories: false, attributes: nil)
         } catch let e {
             print(e.localizedDescription)
@@ -33,7 +33,7 @@ class FileMangerService: ObservableObject {
     }
     
     // 문서경로에 파일 만들기(.txt, .md)
-    // 같은경로 같은 이름 파일은 수정 content만 바꾸면 수정 가능
+    // 같은 경로 같은 이름 파일은 수정 content를 다시 작성하면 새로 써진것으로 바뀝니다.
     func createFile(forderName: String, fileNameExtension: String, content: String) {
         // 파일 경로
         let directoryPath: URL = documentPath.appendingPathComponent("\(forderName)")
