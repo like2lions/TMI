@@ -37,28 +37,40 @@ class FileMangerService: ObservableObject {
     func createFile(forderName: String, fileNameExtension: String, content: String) {
         // 파일 경로
         let directoryPath: URL = documentPath.appendingPathComponent("\(forderName)")
-        let textPath: URL = directoryPath.appendingPathComponent("\(fileNameExtension)")
+        let filePath: URL = directoryPath.appendingPathComponent("\(fileNameExtension)")
         if let data: Data =
             """
             \(content)
             """
             .data(using: String.Encoding.utf8) { // String to Data
             do {
-                try data.write(to: textPath) // 위 data를 쓰기
+                try data.write(to: filePath) // 위 data를 쓰기
             } catch let error {
                 print(error.localizedDescription)
             }
         }
     }
     
-    // 파일 데이터 불러오기
+    // 파일 삭제 기능
+    func deleteFile(forderName: String, fileNameExtension: String) {
+        let directoryPath: URL = documentPath.appendingPathComponent("\(forderName)")
+        let filePath: URL = directoryPath.appendingPathComponent("\(fileNameExtension)")
+        do {
+            try fileManager.removeItem(at: filePath)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+    }
     
+    
+    // 파일 데이터 불러오기
     func loadFileData(forderName: String, fileNameExtension: String) {
         // 파일 경로
         let directoryPath: URL = documentPath.appendingPathComponent("\(forderName)")
-        let textPath: URL = directoryPath.appendingPathComponent("\(fileNameExtension)")
+        let filePath: URL = directoryPath.appendingPathComponent("\(fileNameExtension)")
         do {
-            let dataFromPath: Data = try Data(contentsOf: textPath) // URL을 불러와서 Data타입으로 초기화
+            let dataFromPath: Data = try Data(contentsOf: filePath) // URL을 불러와서 Data타입으로 초기화
             let text: String = String(data: dataFromPath, encoding: .utf8) ?? "문서없음" // Data to String
             print(text) // 출력
             fileData = text
