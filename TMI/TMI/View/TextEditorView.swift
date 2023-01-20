@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct TextEditorView: View {
+    @ObservedObject var memoViewModel: MemoViewModel
+    @State var cmd: String = ""
     @Binding var text: String
     @Binding var textEditorHeight: CGFloat // TextEditor의 높이를 구하기 위해 사용하는 변수
     @Binding var lineIndex: Int // 입력된 line 수 보여주기 위한 변수
-    
+    @Binding var memoIndex: Int
     var body: some View {
         ZStack(alignment: .leading) {
             Text(text)
@@ -23,6 +25,24 @@ struct TextEditorView: View {
                                            value: proxy.size.height)
                 })
             TextEditor(text: $text)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Button("esc") {
+                            cmd = "esc"
+                        }
+                        Button(":q") {
+                            cmd = ":q"
+                            memoViewModel.DetailViewCheckCmd(cmd: cmd, memoIndex: memoIndex, content: text)
+                        }
+                        Button(":wq") {
+                            cmd = ":wq"
+                            memoViewModel.DetailViewCheckCmd(cmd: cmd, memoIndex: memoIndex, content: text)
+                        }
+                        Button("clear") {
+                            cmd = "clear"
+                        }
+                    }
+                }
                 .font(.system(.body))
                 .frame(height: max(40,textEditorHeight))
                 .cornerRadius(10.0)
@@ -53,8 +73,8 @@ struct ViewHeightKey: PreferenceKey {
     }
 }
 
-struct TextEditorView_Previews: PreviewProvider {
-    static var previews: some View {
-        TextEditorView(text: .constant(""), textEditorHeight: .constant(0), lineIndex: .constant(0))
-    }
-}
+//struct TextEditorView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TextEditorView(memoViewModel: MemoViewModel(), text: .constant(""), textEditorHeight: .constant(0), lineIndex: .constant(0))
+//    }
+//}

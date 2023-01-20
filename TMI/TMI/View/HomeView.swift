@@ -13,12 +13,15 @@ enum Field: Hashable {
 }
 
 struct HomeView: View {
+//    @ObservedObject var historyStore: HistoryStore = HistoryStore()
+    @ObservedObject var memoViewModel: MemoViewModel = MemoViewModel()
     
-    @ObservedObject var historyStore: HistoryStore = HistoryStore()
     @State var cmd: String = ""
     @FocusState var focusField: Field?
     
     @ObservedObject var weatherViewModel: WeatherViewModel = WeatherViewModel()
+    
+    @State var memoIndex: Int = -1
     
     var user = "Chap"
     var path = "~"
@@ -28,7 +31,7 @@ struct HomeView: View {
         VStack {
             WeatherTestView(weatherViewModel: weatherViewModel)
             ScrollView {
-                ForEach(historyStore.histories) { history in
+                ForEach(memoViewModel.histories) { history in
                     VStack(alignment: .leading) {
                         HStack {
                             TerminalBar(user: user, path: path, weatherViewModel: weatherViewModel)
@@ -60,16 +63,20 @@ struct HomeView: View {
                                 }
                                 Button("memo") {
                                     cmd = "memo"
+                                    memoViewModel.isShowingDetailView = true
                                 }
-                                .fullScreenCover(isPresented: $historyStore.showingMemoView) {
-                                    DetailView(historyStore: historyStore)
-                                }
+                                // MARK: fullScreenCover로 띄울 시 keyboard tool bar가 나오지 않는 문제 발생해서 navigationLink로 수정하였습니다.
+//                                .fullScreenCover(isPresented: $historyStore.showingMemoView) {
+//                                    DetailView(historyStore: historyStore)
+//                                }
                             }
                         }
                         .onSubmit {
-                            historyStore.checkCmd(cmd: cmd)
+                            memoIndex = memoViewModel.HomeViewCheckCmd(cmd: cmd)
                             focusField = .cmdLine
                             cmd = ""
+                            print("[return memoIndex] \(memoIndex)")
+                            print(memoViewModel.isShowingDetailView)
                         }
                         .frame(maxWidth: .infinity)
                 }
@@ -80,6 +87,9 @@ struct HomeView: View {
             weatherViewModel.loadWeatherData { Forecast in
                 
             }
+        }
+        .navigationDestination(isPresented: $memoViewModel.isShowingDetailView) {
+            DetailView(memoViewModel: memoViewModel, memoIndex: memoIndex)
         }
     }
 }
