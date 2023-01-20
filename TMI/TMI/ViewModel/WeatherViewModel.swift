@@ -60,17 +60,11 @@ class WeatherViewModel: NSObject, ObservableObject {
                                 weatherIcon = "cloud.sun"
                             case "02n":
                                 weatherIcon = "cloud.moon"
-                            case "03d":
+                            case "03d", "03n":
                                 weatherIcon = "cloud"
-                            case "03n":
-                                weatherIcon = "cloud"
-                            case "04d":
+                            case "04d", "04n":
                                 weatherIcon = "cloud.fog"
-                            case "04n":
-                                weatherIcon = "cloud.fog"
-                            case "09d":
-                                weatherIcon = "cloud.drizzle"
-                            case "09n":
+                            case "09d", "09n":
                                 weatherIcon = "cloud.drizzle"
                             case "10d":
                                 weatherIcon = "cloud.sun.rain"
@@ -80,9 +74,7 @@ class WeatherViewModel: NSObject, ObservableObject {
                                 weatherIcon = "cloud.sun.bolt"
                             case "11n":
                                 weatherIcon = "cloud.moon.bolt"
-                            case "13d":
-                                weatherIcon = "snowflake"
-                            case "13n":
+                            case "13d", "13n":
                                 weatherIcon = "snowflake"
                             default:
                                 weatherIcon = "sparkles"
