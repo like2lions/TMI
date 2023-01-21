@@ -31,6 +31,8 @@
 		63D1135E296D8B37002D922D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D1135D296D8B37002D922D /* DetailView.swift */; };
 		ADBA21CA296D6D5C00BAA26E /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA21C9296D6D5C00BAA26E /* Memo.swift */; };
 		ADBA21CD296D70D400BAA26E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBA21CC296D70D400BAA26E /* HomeView.swift */; };
+		EA1909AF297BBA0E00B6209A /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = EA1909AE297BBA0E00B6209A /* MarkdownUI */; };
+		EA8FAC582974649400AA6E26 /* TextEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FAC572974649400AA6E26 /* TextEditorView.swift */; };
 		ADE29F9C2976FD2C0024550A /* FileManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE29F9B2976FD2C0024550A /* FileManagerService.swift */; };
 		EA9C5D2A29702D2E005D1910 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C5D2929702D2E005D1910 /* History.swift */; };
 		EA9C5D2E29702D6B005D1910 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9C5D2D29702D6B005D1910 /* HistoryStore.swift */; };
@@ -64,6 +66,7 @@
 		63D1135D296D8B37002D922D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		ADBA21C9296D6D5C00BAA26E /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		ADBA21CC296D70D400BAA26E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EA8FAC572974649400AA6E26 /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
 		ADE29F9B2976FD2C0024550A /* FileManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerService.swift; sourceTree = "<group>"; };
 		EA9C5D2929702D2E005D1910 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		EA9C5D2D29702D6B005D1910 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E36CC2296DACCA00C1BB68 /* Lottie in Frameworks */,
+				EA1909AF297BBA0E00B6209A /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +177,7 @@
 				EA9C5D2F29702E42005D1910 /* TerminalBar.swift */,
 				ADBA21CC296D70D400BAA26E /* HomeView.swift */,
 				63D1135D296D8B37002D922D /* DetailView.swift */,
+				EA8FAC572974649400AA6E26 /* TextEditorView.swift */,
 				6378C71129713C87009043EB /* WeatherTestView.swift */,
 			);
 			path = View;
@@ -208,6 +213,7 @@
 			name = TMI;
 			packageProductDependencies = (
 				16E36CC1296DACCA00C1BB68 /* Lottie */,
+				EA1909AE297BBA0E00B6209A /* MarkdownUI */,
 			);
 			productName = TMI;
 			productReference = 16E36C91296D5E5B00C1BB68 /* TMI.app */;
@@ -239,6 +245,7 @@
 			mainGroup = 16E36C88296D5E5B00C1BB68;
 			packageReferences = (
 				16E36CC0296DACCA00C1BB68 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				EA1909AD297BBA0E00B6209A /* XCRemoteSwiftPackageReference "MarkdownUI" */,
 			);
 			productRefGroup = 16E36C92296D5E5B00C1BB68 /* Products */;
 			projectDirPath = "";
@@ -276,6 +283,7 @@
 				63BC522C297148CA009274DD /* WeatherViewModel.swift in Sources */,
 				16E36C97296D5E5B00C1BB68 /* ContentView.swift in Sources */,
 				16E36CB7296DABCF00C1BB68 /* Third.swift in Sources */,
+				EA8FAC582974649400AA6E26 /* TextEditorView.swift in Sources */,
 				16E36CBD296DABCF00C1BB68 /* LottieManager.swift in Sources */,
 				EA9C5D2E29702D6B005D1910 /* HistoryStore.swift in Sources */,
 				ADE29F9C2976FD2C0024550A /* FileManagerService.swift in Sources */,
@@ -516,6 +524,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		EA1909AD297BBA0E00B6209A /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -523,6 +539,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 16E36CC0296DACCA00C1BB68 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		EA1909AE297BBA0E00B6209A /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA1909AD297BBA0E00B6209A /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
