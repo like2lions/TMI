@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "facebook_profile_image.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
